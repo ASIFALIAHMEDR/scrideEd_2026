@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM Lab Setup & Teacher Training for Schools in Bangalore | ScrideEd</title>
+<meta name="description" content="ScrideEd partners with Bangalore schools to set up functional robotics and STEM labs, design hands-on curriculum, and upskill teachers. NEP 2020 aligned. Talk to us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ScrideEd School STEM Programs",
+  "provider": {
+    "@type": "Organization",
+    "name": "ScrideEd — Scride Smart Solutions Private Limited",
+    "url": "https://scrideed.com"
+  },
+  "serviceType": "STEM Education Consulting",
+  "areaServed": { "@type": "City", "name": "Bangalore" },
+  "description": "Lab setup, STEM curriculum design, teacher upskilling, and in-school workshops for schools in Bangalore."
+}
+</script>
+
+<style>
+  :root {
+    --ink:       #0D0D0D;
+    --paper:     #F7F6F2;
+    --electric:  #D8AF13;
+    --elec-dim:  rgba(216,175,19,0.08);
+    --elec-mid:  rgba(216,175,19,0.2);
+    --wire:      #1A1A2E;
+    --wire-mid:  #1E293B;
+    --wire-soft: #263147;
+    --steel:     #4A5568;
+    --grid:      #E8E6DF;
+    --white:     #FFFFFF;
+    --green:     #00C896;
+    --green-dim: #00C89610;
+    --amber:     #F59E0B;
+    --slate:     #64748B;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* Subtle grid */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--wire);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    color: var(--white); font-size: 1.2rem;
+    letter-spacing: -0.02em; text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .nav-logo span { color: var(--electric); }
+
+  .nav-tagline {
+    font-size: 0.55rem; color: #475569;
+    font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links a {
+    color: #CBD5E0; text-decoration: none;
+    font-size: 0.875rem; font-weight: 500; transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--electric); }
+  .nav-links a.active { color: var(--electric); }
+
+  .nav-cta {
+    background: var(--electric);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 600 !important;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index: 1;
+    background: var(--wire);
+    padding: 5rem 5% 4.5rem;
+    overflow: hidden;
+  }
+
+  /* Blueprint grid overlay on hero only */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,77,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,77,0,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; right: -40px; bottom: -80px;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(216,175,19,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+
+  .hero-left {}
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--electric);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 24px; height: 2px; background: var(--electric);
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.035em; line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 em { font-style: normal; color: var(--electric); }
+
+  .hero-sub {
+    font-size: 1rem; color: #94A3B8;
+    line-height: 1.75; margin-bottom: 2.25rem;
+    max-width: 460px;
+  }
+
+  .hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--electric); color: var(--white);
+    padding: 0.8rem 1.75rem; border-radius: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(216,175,19,0.22); }
+
+  .btn-ghost {
+    background: transparent; color: #94A3B8;
+    padding: 0.8rem 1.75rem; border-radius: 5px;
+    border: 1px solid #334155;
+    font-weight: 500; font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-ghost:hover { border-color: var(--electric); color: var(--electric); }
+
+  /* Hero right: credential card */
+  .hero-credential-stack {
+    display: flex; flex-direction: column; gap: 0.875rem;
+  }
+
+  .cred-card {
+    background: var(--wire-mid);
+    border: 1px solid #334155;
+    border-radius: 10px; padding: 1.25rem 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .cred-card:hover { border-color: #475569; }
+
+  .cred-card.highlight {
+    border-color: var(--electric);
+    background: #1A1535;
+  }
+
+  .cred-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--elec-dim);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    border: 1px solid var(--elec-mid);
+  }
+
+  .cred-card.highlight .cred-icon { background: var(--electric); }
+
+  .cred-text strong {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.2rem;
+  }
+
+  .cred-text span { font-size: 0.8rem; color: var(--slate); line-height: 1.4; }
+
+  /* ── SECTION BASE ── */
+  section { position: relative; z-index: 1; }
+
+  .section-inner {
+    max-width: 1100px; margin: 0 auto; padding: 5rem 5%;
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--electric);
+    margin-bottom: 0.75rem;
+  }
+
+  h2.heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 700; letter-spacing: -0.03em;
+    color: var(--ink); line-height: 1.2;
+    margin-bottom: 0.875rem;
+  }
+
+  .subtext {
+    font-size: 1rem; color: var(--steel);
+    max-width: 580px; line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+
+  /* ── PROBLEM BANNER ── */
+  .problem-section { background: var(--white); }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .problem-card {
+    background: var(--paper);
+    border: 1px solid var(--grid);
+    border-radius: 8px; padding: 1.75rem;
+    position: relative; overflow: hidden;
+  }
+
+  .problem-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--electric);
+  }
+
+  .problem-stat {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem; font-weight: 700;
+    color: var(--electric); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .problem-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.5rem;
+  }
+
+  .problem-card p { font-size: 0.875rem; color: var(--steel); line-height: 1.65; }
+
+  .problem-callout {
+    background: var(--wire);
+    border-radius: 10px; padding: 2rem 2.5rem;
+    display: flex; align-items: center; gap: 2rem;
+  }
+
+  .problem-callout p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem; font-weight: 500;
+    color: #94A3B8; line-height: 1.65; flex: 1;
+  }
+
+  .problem-callout p strong { color: var(--white); }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--paper); }
+
+  /* Tab navigation */
+  .service-tabs {
+    display: flex; gap: 0.5rem; margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--grid);
+    padding-bottom: 0;
+    flex-wrap: wrap;
+  }
+
+  .stab {
+    padding: 0.75rem 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem; font-weight: 600;
+    color: var(--steel); cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+    display: flex; align-items: center; gap: 0.5rem;
+    background: none; border-top: none; border-left: none; border-right: none;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .stab:hover { color: var(--electric); }
+
+  .stab.active {
+    color: var(--electric);
+    border-bottom-color: var(--electric);
+  }
+
+  .service-panel { display: none; }
+  .service-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+  .service-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.02em;
+    margin-bottom: 0.875rem; line-height: 1.2;
+  }
+
+  .service-content > p {
+    font-size: 0.975rem; color: var(--steel);
+    line-height: 1.8; margin-bottom: 1.75rem;
+  }
+
+  .deliverables-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--electric);
+    margin-bottom: 0.875rem;
+  }
+
+  .deliverables-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .deliverables-list li {
+    font-size: 0.9rem; color: var(--steel);
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .del-check {
+    width: 20px; height: 20px; flex-shrink: 0;
+    background: var(--green-dim);
+    border: 1px solid rgba(0,200,150,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; color: var(--green);
+    margin-top: 2px;
+  }
+
+  .timeline-mini {
+    display: flex; flex-direction: column; gap: 0;
+    background: var(--wire);
+    border-radius: 10px; overflow: hidden;
+  }
+
+  .tl-step {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid #1E293B;
+    position: relative;
+  }
+
+  .tl-step:last-child { border-bottom: none; }
+
+  .tl-num {
+    width: 28px; height: 28px; flex-shrink: 0;
+    background: var(--elec-dim);
+    border: 1.5px solid var(--electric);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; color: var(--electric); font-weight: 700;
+    margin-top: 2px;
+  }
+
+  .tl-content strong {
+    display: block;
+    font-size: 0.875rem; font-weight: 600;
+    color: var(--white); margin-bottom: 0.2rem;
+  }
+
+  .tl-content span { font-size: 0.8rem; color: var(--slate); line-height: 1.45; }
+
+  /* Service visual panel */
+  .service-visual {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .visual-card {
+    background: var(--white);
+    border: 1px solid var(--grid);
+    border-radius: 10px; padding: 1.5rem;
+  }
+
+  .visual-card-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--slate);
+    margin-bottom: 0.875rem;
+  }
+
+  .kit-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .kit-item {
+    background: var(--paper);
+    border: 1px solid var(--grid);
+    border-radius: 6px; padding: 0.75rem 0.5rem;
+    text-align: center; font-size: 0.75rem; color: var(--steel);
+    line-height: 1.4;
+  }
+
+  .kit-item .ki-icon { font-size: 1.4rem; margin-bottom: 0.3rem; display: block; }
+
+  .outcome-list {
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+
+  .outcome-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 0.875rem;
+    background: var(--paper);
+    border-radius: 6px; font-size: 0.825rem;
+  }
+
+  .outcome-row span { color: var(--steel); }
+  .outcome-row strong { color: var(--ink); font-weight: 600; }
+
+  .teacher-modules {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .module-tag {
+    background: var(--paper);
+    border: 1px solid var(--grid);
+    border-radius: 6px; padding: 0.6rem 0.875rem;
+    font-size: 0.8rem; color: var(--steel);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .module-tag.done { border-color: rgba(0,200,150,0.3); color: var(--ink); }
+  .module-tag.done::before { content: '✓'; color: var(--green); font-size: 0.75rem; font-weight: 700; }
+  .module-tag:not(.done)::before { content: '→'; color: var(--electric); font-size: 0.75rem; font-weight: 700; }
+
+  /* ── PROCESS ── */
+  .process-section { background: var(--white); }
+
+  .process-track {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 0; position: relative;
+    margin-bottom: 2rem;
+  }
+
+  /* Connecting line behind steps */
+  .process-track::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 10%; right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--electric), rgba(255,77,0,0.2));
+    z-index: 0;
+  }
+
+  .process-step {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; padding: 0 0.75rem;
+    position: relative; z-index: 1;
+  }
+
+  .ps-dot {
+    width: 56px; height: 56px;
+    background: var(--wire);
+    border: 2px solid #334155;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1rem;
+    transition: border-color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .process-step:first-child .ps-dot,
+  .process-step:hover .ps-dot {
+    border-color: var(--electric);
+    background: var(--wire-mid);
+  }
+
+  .ps-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.3rem;
+  }
+
+  .ps-desc { font-size: 0.78rem; color: var(--slate); line-height: 1.5; }
+
+  /* ── OUTCOMES / WHY SCRIDEED ── */
+  .outcomes-section { background: var(--wire); }
+  .outcomes-section .heading { color: var(--white); }
+  .outcomes-section .subtext { color: var(--slate); }
+
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .outcome-card {
+    background: var(--wire-mid);
+    border: 1px solid #334155;
+    border-radius: 10px; padding: 1.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .outcome-card:hover { border-color: #475569; }
+
+  .outcome-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.25rem; font-weight: 700;
+    color: var(--electric); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .outcome-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+
+  .outcome-card p { font-size: 0.85rem; color: var(--slate); line-height: 1.65; }
+
+  /* Differentiators */
+  .diff-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .diff-card {
+    background: #263147;
+    border-radius: 10px; padding: 1.5rem;
+    border: 1px solid #334155;
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+
+  .diff-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--elec-dim);
+    border: 1px solid var(--elec-mid);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .diff-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.35rem;
+  }
+
+  .diff-card p { font-size: 0.825rem; color: var(--slate); line-height: 1.6; }
+
+  /* ── NEP 2020 STRIP ── */
+  .nep-strip {
+    position: relative; z-index: 1;
+    background: var(--electric);
+    padding: 3rem 5%;
+    overflow: hidden;
+  }
+
+  .nep-strip::before {
+    content: 'NEP 2020';
+    position: absolute; right: 4%;
+    top: 50%; transform: translateY(-50%);
+    font-family: 'Space Mono', monospace;
+    font-size: 8rem; font-weight: 700;
+    color: rgba(255,255,255,0.06);
+    pointer-events: none; line-height: 1;
+    white-space: nowrap;
+  }
+
+  .nep-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    position: relative; z-index: 1;
+  }
+
+  .nep-inner h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.02em; max-width: 540px;
+    line-height: 1.3;
+  }
+
+  .nep-inner p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 300px; line-height: 1.65;
+  }
+
+  /* ── PRICING ── */
+  .pricing-section { background: var(--paper); }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pricing-card {
+    background: var(--white);
+    border: 1.5px solid var(--grid);
+    border-radius: 12px; overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+
+  .pricing-card.featured { border-color: var(--electric); border-width: 2px; }
+
+  .pricing-head {
+    padding: 1.75rem 2rem 1.25rem;
+    border-bottom: 1px solid var(--grid);
+  }
+
+  .pricing-card.featured .pricing-head { background: var(--wire); }
+
+  .pricing-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--electric);
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-card.featured .pricing-tag { color: var(--electric); }
+
+  .pricing-head h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.35rem;
+  }
+
+  .pricing-card.featured .pricing-head h3 { color: var(--white); }
+
+  .pricing-head p { font-size: 0.85rem; color: var(--steel); line-height: 1.5; }
+  .pricing-card.featured .pricing-head p { color: var(--slate); }
+
+  .pricing-price {
+    margin-top: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .pricing-price .amount {
+    font-size: 1.75rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.03em;
+  }
+
+  .pricing-card.featured .pricing-price .amount { color: var(--white); }
+
+  .pricing-price .per {
+    font-size: 0.8rem; color: var(--slate); margin-left: 0.25rem;
+  }
+
+  .pricing-price .cta-note {
+    display: block; font-size: 0.8rem;
+    color: var(--electric); margin-top: 0.2rem;
+    font-weight: 600;
+  }
+
+  .pricing-body {
+    padding: 1.5rem 2rem; flex: 1;
+  }
+
+  .includes-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--slate);
+    margin-bottom: 0.75rem;
+  }
+
+  .includes-list {
+    list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+  }
+
+  .includes-list li {
+    font-size: 0.875rem; color: var(--steel);
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .includes-list li::before {
+    content: '✓'; color: var(--green);
+    font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .pricing-footer {
+    padding: 1.25rem 2rem;
+    border-top: 1px solid var(--grid);
+  }
+
+  .btn-enquire {
+    display: block; text-align: center;
+    background: var(--wire); color: var(--white);
+    padding: 0.75rem; border-radius: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 0.875rem;
+    text-decoration: none; transition: background 0.2s;
+  }
+
+  .pricing-card.featured .btn-enquire { background: var(--electric); }
+  .btn-enquire:hover { opacity: 0.85; }
+
+  .pricing-note {
+    text-align: center; margin-top: 1.5rem;
+    font-size: 0.85rem; color: var(--steel);
+  }
+
+  .pricing-note a { color: var(--electric); }
+
+  /* ── TESTIMONIALS / TRUST ── */
+  .trust-section { background: var(--white); }
+
+  .trust-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .trust-card {
+    background: var(--paper);
+    border: 1px solid var(--grid); border-radius: 10px;
+    padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .trust-card .tc-icon {
+    font-size: 1.5rem;
+  }
+
+  .trust-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; font-weight: 700; color: var(--ink);
+  }
+
+  .trust-card p { font-size: 0.875rem; color: var(--steel); line-height: 1.65; }
+
+  .founder-strip {
+    background: var(--wire);
+    border-radius: 12px; padding: 2.5rem;
+    display: flex; align-items: center; gap: 2rem;
+  }
+
+  .founder-photo-mini {
+    width: 80px; height: 80px; flex-shrink: 0;
+    background: #1E293B;
+    border-radius: 50%;
+    border: 2px solid var(--electric);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    /*
+      Replace with: <img src="/images/asif-ali-ahmed-r-founder-scrideed.jpg"
+      alt="Asif Ali Ahmed R" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">
+    */
+  }
+
+  .founder-quote-text {
+    flex: 1;
+  }
+
+  .founder-quote-text blockquote {
+    font-size: 1rem; color: #94A3B8;
+    line-height: 1.75; font-style: italic;
+    margin-bottom: 0.875rem;
+  }
+
+  .founder-quote-text blockquote strong { color: var(--white); font-style: normal; }
+
+  .founder-quote-text cite {
+    font-size: 0.825rem; color: var(--slate);
+    font-style: normal; display: block;
+  }
+
+  .founder-quote-text cite strong { color: var(--electric); }
+
+  /* ── ENQUIRY FORM ── */
+  .enquiry-section { background: var(--paper); }
+
+  .enquiry-layout {
+    display: grid; grid-template-columns: 1fr 480px;
+    gap: 4rem; align-items: start;
+  }
+
+  .enquiry-left h2 { margin-bottom: 1rem; }
+
+  .enquiry-left p {
+    font-size: 0.975rem; color: var(--steel);
+    line-height: 1.75; margin-bottom: 2rem;
+  }
+
+  .contact-chips {
+    display: flex; flex-direction: column; gap: 0.75rem;
+  }
+
+  .chip-link {
+    display: flex; align-items: center; gap: 0.875rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--white); border: 1.5px solid var(--grid);
+    border-radius: 8px; text-decoration: none;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .chip-link:hover { border-color: var(--electric); transform: translateX(4px); }
+
+  .chip-icon {
+    width: 38px; height: 38px; flex-shrink: 0;
+    border-radius: 8px; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .ci-wa  { background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.25); }
+  .ci-em  { background: #EFF6FF; border: 1px solid #BFDBFE; }
+  .ci-li  { background: #EEF2FF; border: 1px solid #C7D2FE; }
+
+  .chip-link strong { display: block; font-size: 0.875rem; font-weight: 700; color: var(--ink); }
+  .chip-link span   { font-size: 0.78rem; color: var(--steel); }
+
+  /* Enquiry form card */
+  .enquiry-form-card {
+    background: var(--white);
+    border: 1.5px solid var(--grid);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .form-head {
+    background: var(--wire); padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .form-head h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.15rem;
+  }
+
+  .form-head p { font-size: 0.8rem; color: var(--slate); }
+
+  .form-bod { padding: 1.75rem; }
+
+  .fg { margin-bottom: 1rem; }
+
+  label {
+    display: block; font-size: 0.8rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 0.35rem;
+  }
+
+  label .req { color: var(--electric); margin-left: 2px; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    background: var(--paper); border: 1.5px solid var(--grid);
+    border-radius: 6px; padding: 0.65rem 0.875rem;
+    font-family: 'Inter', sans-serif; font-size: 0.875rem;
+    color: var(--ink); outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--electric);
+    box-shadow: 0 0 0 3px var(--elec-dim);
+    background: var(--white);
+  }
+
+  .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A5568' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.5rem; cursor: pointer;
+  }
+
+  textarea { resize: vertical; min-height: 90px; }
+
+  .btn-enq-submit {
+    width: 100%;
+    background: var(--electric); color: var(--white);
+    padding: 0.875rem; border-radius: 6px; border: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; margin-top: 0.5rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+
+  .btn-enq-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(216,175,19,0.22); }
+  .btn-enq-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .enq-success { display: none; text-align: center; padding: 2.5rem 1.5rem; }
+  .enq-success.show { display: block; }
+  .enq-success .si { font-size: 2.5rem; margin-bottom: 1rem; }
+  .enq-success h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+  .enq-success p  { font-size: 0.875rem; color: var(--steel); line-height: 1.65; }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 1;
+    background: var(--ink); padding: 1.5rem 5%;
+  }
+
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-bottom p { font-size: 0.8rem; color: #2D3748; }
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { font-size: 0.8rem; color: #2D3748; text-decoration: none; }
+  .footer-legal a:hover { color: var(--electric); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: #25D366; color: white;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none; z-index: 200;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .service-panel.active { grid-template-columns: 1fr; }
+    .process-track { grid-template-columns: repeat(3, 1fr); }
+    .outcomes-grid { grid-template-columns: 1fr 1fr; }
+    .diff-row { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .founder-strip { flex-direction: column; text-align: center; }
+    .enquiry-layout { grid-template-columns: 1fr; }
+    .f-row { grid-template-columns: 1fr; }
+    .teacher-modules { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .outcomes-grid { grid-template-columns: 1fr; }
+    .process-track { grid-template-columns: repeat(2, 1fr); }
+    .kit-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    Scride<span>Ed</span>
+    <span class="nav-tagline">Learn · Dream · Build</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/courses.html">Courses</a></li>
+    <li><a href="/schools/" class="active">For Schools</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact.html" class="nav-cta">Contact →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">School Partnership Program — Bangalore</div>
+      <h1>Your Students Deserve a Lab That <em>Actually Works.</em></h1>
+      <p class="hero-sub">ScrideEd partners with Bangalore schools to build functional STEM labs, design hands-on curriculum, and upskill teachers — so your students get real technology experience, not just a computer room with outdated desktops.</p>
+      <div class="hero-ctas">
+        <a href="#enquiry" class="btn-primary">Enquire About Partnership →</a>
+        <a href="#services" class="btn-ghost">See What We Offer</a>
+      </div>
+    </div>
+    <div class="hero-credential-stack">
+      <div class="cred-card highlight">
+        <div class="cred-icon">🏅</div>
+        <div class="cred-text">
+          <strong>Led by an IEEE Global Honoree</strong>
+          <span>Asif Ali Ahmed R — one of 20 engineers globally recognised by IEEE Computer Society. Your teachers learn from someone who has built real systems.</span>
+        </div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">📐</div>
+        <div class="cred-text">
+          <strong>NEP 2020 Aligned</strong>
+          <span>All curriculum and lab programs are designed around the National Education Policy's emphasis on experiential, skills-based learning.</span>
+        </div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">📍</div>
+        <div class="cred-text">
+          <strong>Based in Bangalore — We Come to You</strong>
+          <span>Frazer Town headquarters, but we work across Bangalore. No travel costs for schools within the city.</span>
+        </div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🏫</div>
+        <div class="cred-text">
+          <strong>End-to-End — Not Just a Vendor</strong>
+          <span>We handle lab setup, curriculum, teacher training, and ongoing support. One point of contact, full accountability.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="section-inner">
+    <div class="eyebrow">The Reality in Most Bangalore Schools</div>
+    <h2 class="heading">Most School STEM Labs Are Either Empty, Outdated, or Unused.</h2>
+    <p class="subtext">The problem isn't investment — many schools have spent on equipment. The problem is that labs without trained teachers, proper curriculum, and maintained equipment quickly become expensive storage rooms.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-stat">67%</div>
+        <h3>Labs without active curriculum</h3>
+        <p>Most school computer or science labs lack a structured program that uses the space consistently and purposefully throughout the academic year.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-stat">80%</div>
+        <h3>Teachers uncomfortable with hardware</h3>
+        <p>Even where equipment exists, the majority of school teachers have not been trained to deliver hands-on electronics, robotics, or IoT sessions confidently.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-stat">13–18</div>
+        <h3>The critical age — most underserved</h3>
+        <p>The years when students choose career streams. The window where real STEM exposure makes the biggest difference. Almost no school program specifically serves this bracket with depth.</p>
+      </div>
+    </div>
+    <div class="problem-callout">
+      <p>When a student leaves your school at 17 and picks their stream based on what they've seen — they're choosing from <strong>a limited picture.</strong> A functional STEM lab, a trained teacher, and a real curriculum changes what they're able to imagine for themselves.</p>
+      <a href="#enquiry" class="btn-primary" style="flex-shrink:0;">Let's Fix This →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-inner">
+    <div class="eyebrow">What We Offer</div>
+    <h2 class="heading">Three Ways ScrideEd Works With Schools</h2>
+    <p class="subtext">Pick one service or combine all three. Every engagement is scoped to your school's specific needs, budget, and timeline.</p>
+
+    <div class="service-tabs">
+      <button class="stab active" onclick="switchTab('lab')">🔬 Lab Setup</button>
+      <button class="stab" onclick="switchTab('curriculum')">📚 Curriculum Design</button>
+      <button class="stab" onclick="switchTab('teacher')">👩‍🏫 Teacher Upskilling</button>
+    </div>
+
+    <!-- TAB: LAB SETUP -->
+    <div class="service-panel active" id="panel-lab">
+      <div class="service-content">
+        <h3>Turn an Empty Room Into a Working STEM Lab.</h3>
+        <p>We design, source, and set up a functional robotics and electronics lab tailored to your school's space, budget, and student age range. From floor plan to first session — we handle everything.</p>
+        <div class="deliverables-label">What's Included</div>
+        <ul class="deliverables-list">
+          <li><div class="del-check">✓</div> Lab layout design and space planning</li>
+          <li><div class="del-check">✓</div> Equipment list tailored to your budget and NEP 2020 goals</li>
+          <li><div class="del-check">✓</div> Procurement support — sourcing quality kits at fair prices</li>
+          <li><div class="del-check">✓</div> Physical setup, testing, and handover</li>
+          <li><div class="del-check">✓</div> Inventory and maintenance guide for school staff</li>
+          <li><div class="del-check">✓</div> 30-day post-setup support</li>
+        </ul>
+        <a href="#enquiry" class="btn-primary">Enquire About Lab Setup →</a>
+      </div>
+      <div class="service-visual">
+        <div class="visual-card">
+          <div class="visual-card-label">Typical Lab Equipment</div>
+          <div class="kit-grid">
+            <div class="kit-item"><span class="ki-icon">⚡</span>Arduino Kits</div>
+            <div class="kit-item"><span class="ki-icon">🤖</span>Robotics Kits</div>
+            <div class="kit-item"><span class="ki-icon">🌐</span>IoT Modules</div>
+            <div class="kit-item"><span class="ki-icon">🔌</span>Electronics Components</div>
+            <div class="kit-item"><span class="ki-icon">💻</span>Lab Laptops</div>
+            <div class="kit-item"><span class="ki-icon">🛠️</span>Tools & Workspace</div>
+          </div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-card-label">Setup Process</div>
+          <div class="timeline-mini">
+            <div class="tl-step"><div class="tl-num">1</div><div class="tl-content"><strong>Site Visit</strong><span>We visit your school, assess the space, and understand your goals.</span></div></div>
+            <div class="tl-step"><div class="tl-num">2</div><div class="tl-content"><strong>Proposal</strong><span>Custom lab plan with equipment list, layout, and budget breakdown.</span></div></div>
+            <div class="tl-step"><div class="tl-num">3</div><div class="tl-content"><strong>Procurement</strong><span>We source all equipment — you get invoices for school records.</span></div></div>
+            <div class="tl-step"><div class="tl-num">4</div><div class="tl-content"><strong>Setup & Test</strong><span>Physical installation, testing every piece of equipment.</span></div></div>
+            <div class="tl-step"><div class="tl-num">5</div><div class="tl-content"><strong>Handover</strong><span>Full walkthrough with your staff. Lab is ready for Day 1.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: CURRICULUM -->
+    <div class="service-panel" id="panel-curriculum">
+      <div class="service-content">
+        <h3>A Curriculum That Actually Gets Used — Every Week.</h3>
+        <p>We design structured, hands-on STEM curriculum modules for your school — session plans, project briefs, assessment rubrics, and student materials. Aligned with NEP 2020 and designed so any teacher can deliver it confidently after training.</p>
+        <div class="deliverables-label">What's Included</div>
+        <ul class="deliverables-list">
+          <li><div class="del-check">✓</div> Curriculum mapped to your school's timetable and class sizes</li>
+          <li><div class="del-check">✓</div> Age-appropriate modules for Class 8–12</li>
+          <li><div class="del-check">✓</div> Session-by-session lesson plans with timing</li>
+          <li><div class="del-check">✓</div> Student project briefs and worksheets</li>
+          <li><div class="del-check">✓</div> Assessment framework — how to grade hands-on work</li>
+          <li><div class="del-check">✓</div> NEP 2020 competency alignment documentation</li>
+          <li><div class="del-check">✓</div> Digital copies for all staff, editable for your context</li>
+        </ul>
+        <a href="#enquiry" class="btn-primary">Enquire About Curriculum →</a>
+      </div>
+      <div class="service-visual">
+        <div class="visual-card">
+          <div class="visual-card-label">Sample Curriculum Modules</div>
+          <div class="outcome-list">
+            <div class="outcome-row"><span>Introduction to Electronics</span><strong>4 sessions</strong></div>
+            <div class="outcome-row"><span>Arduino Fundamentals</span><strong>6 sessions</strong></div>
+            <div class="outcome-row"><span>Sensors & IoT Projects</span><strong>6 sessions</strong></div>
+            <div class="outcome-row"><span>Robotics & Motion Control</span><strong>8 sessions</strong></div>
+            <div class="outcome-row"><span>Python Programming Basics</span><strong>8 sessions</strong></div>
+            <div class="outcome-row"><span>Capstone Project</span><strong>4 sessions</strong></div>
+          </div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-card-label">Curriculum Design Process</div>
+          <div class="timeline-mini">
+            <div class="tl-step"><div class="tl-num">1</div><div class="tl-content"><strong>Needs Assessment</strong><span>We understand your school's goals, existing capabilities, and student profile.</span></div></div>
+            <div class="tl-step"><div class="tl-num">2</div><div class="tl-content"><strong>Draft Curriculum</strong><span>Full curriculum draft delivered within 2 weeks of brief confirmation.</span></div></div>
+            <div class="tl-step"><div class="tl-num">3</div><div class="tl-content"><strong>Review & Iterate</strong><span>One round of revisions based on your feedback.</span></div></div>
+            <div class="tl-step"><div class="tl-num">4</div><div class="tl-content"><strong>Teacher Training</strong><span>We train your teachers to deliver the curriculum with confidence.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: TEACHER UPSKILLING -->
+    <div class="service-panel" id="panel-teacher">
+      <div class="service-content">
+        <h3>Teachers Who Can Teach STEM — Not Just Supervise the Lab.</h3>
+        <p>A lab and curriculum only work if the teacher in the room is confident. We run structured, practical upskilling workshops for school teachers — not theoretical certification courses. Your teachers build things, debug things, and leave ready to teach the next day.</p>
+        <div class="deliverables-label">What's Included</div>
+        <ul class="deliverables-list">
+          <li><div class="del-check">✓</div> Hands-on teacher workshop (1 or 2 days on-site)</li>
+          <li><div class="del-check">✓</div> Arduino, basic electronics, and IoT fundamentals</li>
+          <li><div class="del-check">✓</div> How to run a project-based session in a classroom</li>
+          <li><div class="del-check">✓</div> Troubleshooting hardware and software with students</li>
+          <li><div class="del-check">✓</div> Each teacher completes a build during the training</li>
+          <li><div class="del-check">✓</div> Teacher reference guide and session resource pack</li>
+          <li><div class="del-check">✓</div> 30-day post-training WhatsApp support from Asif directly</li>
+        </ul>
+        <a href="#enquiry" class="btn-primary">Enquire About Teacher Training →</a>
+      </div>
+      <div class="service-visual">
+        <div class="visual-card">
+          <div class="visual-card-label">Training Modules Covered</div>
+          <div class="teacher-modules">
+            <div class="module-tag done">Electronics basics</div>
+            <div class="module-tag done">Arduino setup</div>
+            <div class="module-tag done">Sensor projects</div>
+            <div class="module-tag done">Motor control</div>
+            <div class="module-tag done">Debugging hardware</div>
+            <div class="module-tag done">Running a lab session</div>
+            <div class="module-tag">Python introduction</div>
+            <div class="module-tag">Advanced IoT (optional)</div>
+          </div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-card-label">Training Format</div>
+          <div class="outcome-list">
+            <div class="outcome-row"><span>Duration</span><strong>1–2 days (on-site)</strong></div>
+            <div class="outcome-row"><span>Group size</span><strong>Up to 15 teachers</strong></div>
+            <div class="outcome-row"><span>Format</span><strong>Hands-on, not lecture</strong></div>
+            <div class="outcome-row"><span>Each teacher builds</span><strong>Working IoT project</strong></div>
+            <div class="outcome-row"><span>Post-training support</span><strong>30 days via WhatsApp</strong></div>
+            <div class="outcome-row"><span>Certificate issued</span><strong>Yes, per attendee</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="section-inner">
+    <div class="eyebrow">How a Partnership Works</div>
+    <h2 class="heading">From First Email to First Student Build</h2>
+    <p class="subtext">A typical ScrideEd school engagement goes from initial enquiry to first student session in 3–6 weeks, depending on scope.</p>
+    <div class="process-track">
+      <div class="process-step">
+        <div class="ps-dot">✉️</div>
+        <div class="ps-label">Enquiry</div>
+        <div class="ps-desc">Email or WhatsApp us with your school name and interest area.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-dot">🏫</div>
+        <div class="ps-label">Site Visit</div>
+        <div class="ps-desc">We visit your school, meet the team, and understand what's needed.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-dot">📋</div>
+        <div class="ps-label">Proposal</div>
+        <div class="ps-desc">Custom scope, timeline, and pricing within 5 working days.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-dot">🔧</div>
+        <div class="ps-label">Delivery</div>
+        <div class="ps-desc">Lab setup, curriculum delivery, and teacher training on schedule.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-dot">🚀</div>
+        <div class="ps-label">Go Live</div>
+        <div class="ps-desc">Students start building. We stay on call for 30 days post-launch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="outcomes-section">
+  <div class="section-inner">
+    <div class="eyebrow" style="color:var(--electric);">Why It Matters</div>
+    <h2 class="heading">What a School Gains From a Real STEM Program</h2>
+    <p class="subtext">Not just equipment in a room — measurable outcomes for your students, staff, and institution.</p>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-num">1st</div>
+        <h4>Competitive edge in Bangalore</h4>
+        <p>Parents increasingly seek schools with demonstrable STEM programs. A functional lab and trained teachers is a visible, credible differentiator during admissions.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">NEP</div>
+        <h4>Full NEP 2020 alignment</h4>
+        <p>Our curriculum directly addresses NEP 2020's experiential learning and skills-based education mandates — supporting your school's compliance and accreditation goals.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">↑</div>
+        <h4>Student career clarity</h4>
+        <p>Students who experience hands-on STEM before Class 12 choose better streams and make more confident engineering college decisions. Measurable reduction in wrong-choice regret.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">100%</div>
+        <h4>Trained teachers on Day 1</h4>
+        <p>Unlike equipment vendors who deliver and disappear, we don't hand over a lab until your teachers are confident running it independently.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">🏆</div>
+        <h4>Competition-ready students</h4>
+        <p>Students from labs we set up have the skills to enter INSPIRE Awards, state science fairs, and inter-school robotics competitions — bringing recognition back to your institution.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">∞</div>
+        <h4>Ongoing support, not one-off</h4>
+        <p>We stay available after every engagement — for curriculum questions, equipment issues, or teacher support. You're not left with an unused lab and no one to call.</p>
+      </div>
+    </div>
+    <div class="diff-row">
+      <div class="diff-card">
+        <div class="diff-icon">⚡</div>
+        <div>
+          <h4>ScrideEd vs Equipment Vendors</h4>
+          <p>Equipment vendors sell you kits and leave. We design the space, train the teachers, build the curriculum, and stay available for 30 days post-delivery. The lab actually gets used.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🎓</div>
+        <div>
+          <h4>ScrideEd vs Large EdTech Platforms</h4>
+          <p>Big platforms give you a portal and a helpline. We give you Asif's WhatsApp number. Direct access to an IEEE Global Honoree who shows up in person and stays involved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEP 2020 STRIP -->
+<section class="nep-strip">
+  <div class="nep-inner">
+    <h3>Our programs are fully aligned with NEP 2020's vision for experiential, skills-based, and interdisciplinary learning.</h3>
+    <p>Every ScrideEd school program is designed with NEP 2020 competencies mapped against each session — giving your school clear documentation for accreditation and inspection purposes.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="section-inner">
+    <div class="eyebrow">Investment</div>
+    <h2 class="heading">Transparent Pricing. No Hidden Costs.</h2>
+    <p class="subtext">Every engagement is custom-scoped. The prices below are starting points — your actual quote will be based on school size, equipment choices, and program scope.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <div class="pricing-tag">Service 1</div>
+          <h3>Teacher Upskilling</h3>
+          <p>Hands-on STEM training for your teachers. They leave ready to teach.</p>
+          <div class="pricing-price">
+            <span class="amount">₹15,000</span>
+            <span class="per">starting / session</span>
+            <span class="cta-note">Up to 15 teachers per session</span>
+          </div>
+        </div>
+        <div class="pricing-body">
+          <div class="includes-label">Includes</div>
+          <ul class="includes-list">
+            <li>1-day on-site training workshop</li>
+            <li>Arduino + electronics hands-on build</li>
+            <li>Teacher reference guide</li>
+            <li>Certificate per teacher</li>
+            <li>30-day post-training WhatsApp support</li>
+          </ul>
+        </div>
+        <div class="pricing-footer">
+          <a href="#enquiry" class="btn-enquire">Enquire →</a>
+        </div>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-head">
+          <div class="pricing-tag">Service 2 — Most Requested</div>
+          <h3>Lab Setup + Curriculum</h3>
+          <p>Complete lab design, procurement, setup, and a full curriculum to use it.</p>
+          <div class="pricing-price">
+            <span class="amount">₹75,000</span>
+            <span class="per">starting</span>
+            <span class="cta-note">Custom quote based on your space & budget</span>
+          </div>
+        </div>
+        <div class="pricing-body">
+          <div class="includes-label">Includes</div>
+          <ul class="includes-list">
+            <li>Site visit and lab planning</li>
+            <li>Equipment procurement support</li>
+            <li>Physical setup and testing</li>
+            <li>Full academic year curriculum</li>
+            <li>Session plans, worksheets, assessments</li>
+            <li>NEP 2020 alignment documentation</li>
+            <li>30-day post-setup support</li>
+          </ul>
+        </div>
+        <div class="pricing-footer">
+          <a href="#enquiry" class="btn-enquire">Get a Custom Quote →</a>
+        </div>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <div class="pricing-tag">Service 3</div>
+          <h3>Full Partnership Package</h3>
+          <p>Lab + curriculum + teacher training + ongoing in-school workshops for students.</p>
+          <div class="pricing-price">
+            <span class="amount">Custom</span>
+            <span class="per">annual engagement</span>
+            <span class="cta-note">Talk to us for school-specific pricing</span>
+          </div>
+        </div>
+        <div class="pricing-body">
+          <div class="includes-label">Includes Everything +</div>
+          <ul class="includes-list">
+            <li>Everything in Lab + Curriculum package</li>
+            <li>Teacher upskilling workshop included</li>
+            <li>Monthly in-school student workshops</li>
+            <li>Annual STEM day event planning</li>
+            <li>Student project guidance for competitions</li>
+            <li>Dedicated account contact (Asif directly)</li>
+          </ul>
+        </div>
+        <div class="pricing-footer">
+          <a href="#enquiry" class="btn-enquire">Enquire →</a>
+        </div>
+      </div>
+    </div>
+    <p class="pricing-note">
+      All pricing is exclusive of equipment costs, which vary by school size and lab scope.<br>
+      Have a tight budget? <a href="#enquiry">Tell us</a> — we work with schools to find the right scope.
+    </p>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="section-inner">
+    <div class="eyebrow">Why Schools Trust ScrideEd</div>
+    <h2 class="heading">Not Just a Vendor. A Partner.</h2>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="tc-icon">🏅</div>
+        <h4>Founder is an IEEE Global Honoree</h4>
+        <p>Asif Ali Ahmed R is one of 20 engineers globally recognised by IEEE Computer Society. He trains your teachers personally — not a junior staff member.</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-icon">🔧</div>
+        <h4>We've Built Real Systems</h4>
+        <p>ScrideEd's founder built an autonomous drone, a real-time IoT water monitoring system, and production-grade cloud infrastructure. We teach from real experience, not just textbooks.</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-icon">📋</div>
+        <h4>Registered Company, Proper Invoicing</h4>
+        <p>ScrideEd operates under Scride Smart Solutions Private Limited — a registered company in Bangalore. We provide proper tax invoices for all school engagements, GST-compliant on registration.</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-icon">📞</div>
+        <h4>You Have Our Number. Literally.</h4>
+        <p>Every school partner gets direct WhatsApp access to Asif for 30 days post-delivery. If something doesn't work, you call us — not a support ticket queue.</p>
+      </div>
+    </div>
+
+    <div class="founder-strip">
+      <div class="founder-photo-mini">👤</div>
+      <div class="founder-quote-text">
+        <blockquote>
+          "I've seen too many schools buy robotics kits that end up in a cupboard because nobody was trained to use them. <strong>We don't leave until the lab works, the teachers are confident, and the first students have built something with their hands.</strong> That's the standard I hold us to."
+        </blockquote>
+        <cite>— <strong>Asif Ali Ahmed R</strong>, Founder, ScrideEd · IEEE CS Global Honoree · Former CTO</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section class="enquiry-section" id="enquiry">
+  <div class="section-inner">
+    <div class="enquiry-layout">
+      <div class="enquiry-left">
+        <div class="eyebrow">Start the Conversation</div>
+        <h2 class="heading">Tell Us About Your School.</h2>
+        <p>Fill the form and we'll get back to you within one working day to arrange a free 30-minute call or site visit. No commitment required.</p>
+        <div class="contact-chips">
+          <a href="https://wa.me/918660552494?text=Hi%20ScrideEd!%20I%27m%20from%20a%20school%20in%20Bangalore%20and%20interested%20in%20your%20school%20partnership%20programs." class="chip-link">
+            <div class="chip-icon ci-wa">💬</div>
+            <div><strong>WhatsApp Us Directly</strong><span>+91 8660552494 — fastest response</span></div>
+          </a>
+          <a href="mailto:hello@scrideed.com?subject=School Partnership Enquiry" class="chip-link">
+            <div class="chip-icon ci-em">✉️</div>
+            <div><strong>Email Us</strong><span>hello@scrideed.com — reply within 24 hours</span></div>
+          </a>
+          <a href="https://www.linkedin.com/in/asif-ali-ahmed-r-01539817a" target="_blank" class="chip-link">
+            <div class="chip-icon ci-li">🔗</div>
+            <div><strong>Connect on LinkedIn</strong><span>Message Asif directly</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="enquiry-form-card">
+        <div class="form-head">
+          <h3>School Partnership Enquiry</h3>
+          <p>Free consultation — no commitment</p>
+        </div>
+        <div class="form-bod">
+          <div id="enq-form">
+            <div class="f-row">
+              <div class="fg">
+                <label for="s-name">Your name <span class="req">*</span></label>
+                <input type="text" id="s-name" placeholder="e.g. Priya Sharma">
+              </div>
+              <div class="fg">
+                <label for="s-role">Your role <span class="req">*</span></label>
+                <select id="s-role">
+                  <option value="">Select</option>
+                  <option>Principal</option>
+                  <option>Vice Principal</option>
+                  <option>STEM Coordinator</option>
+                  <option>Science / Computer Teacher</option>
+                  <option>Management / Trustee</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="s-school">School name <span class="req">*</span></label>
+              <input type="text" id="s-school" placeholder="e.g. St. Joseph's Boys' High School">
+            </div>
+            <div class="f-row">
+              <div class="fg">
+                <label for="s-board">School board</label>
+                <select id="s-board">
+                  <option value="">Select</option>
+                  <option>CBSE</option>
+                  <option>ICSE / ISC</option>
+                  <option>State Board (Karnataka)</option>
+                  <option>IB</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label for="s-students">Approx. student strength</label>
+                <select id="s-students">
+                  <option value="">Select</option>
+                  <option>Under 300</option>
+                  <option>300 – 800</option>
+                  <option>800 – 1500</option>
+                  <option>1500+</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="s-phone">Phone / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="s-phone" placeholder="10-digit number" maxlength="10">
+            </div>
+            <div class="fg">
+              <label for="s-email">Email address <span class="req">*</span></label>
+              <input type="email" id="s-email" placeholder="principal@schoolname.edu.in">
+            </div>
+            <div class="fg">
+              <label for="s-interest">I'm interested in</label>
+              <select id="s-interest">
+                <option value="">Select primary interest</option>
+                <option>Lab Setup Only</option>
+                <option>Curriculum Design Only</option>
+                <option>Teacher Upskilling / Training</option>
+                <option>Lab + Curriculum (most popular)</option>
+                <option>Full Partnership Package</option>
+                <option>In-School Student Workshop (one-time)</option>
+                <option>Not sure — want to discuss</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="s-message">Anything else we should know?</label>
+              <textarea id="s-message" placeholder="e.g. We have a room but no equipment. Looking to launch by August 2026..."></textarea>
+            </div>
+            <button class="btn-enq-submit" id="enq-btn" onclick="submitEnquiry()">
+              <span id="enq-btn-text">Send Enquiry →</span>
+            </button>
+            <p style="font-size:0.75rem;color:#94A3B8;text-align:center;margin-top:0.875rem;">
+              We'll get back to you within one working day. No spam, ever.
+            </p>
+          </div>
+
+          <div class="enq-success" id="enq-success">
+            <div class="si">🎉</div>
+            <h4>Enquiry Received!</h4>
+            <p>Thank you. We'll be in touch within one working day to arrange a free consultation call or site visit.<br><br>
+            For faster response, <a href="https://wa.me/918660552494?text=Hi!%20I%20just%20submitted%20a%20school%20partnership%20enquiry%20on%20your%20website." style="color:var(--electric);">WhatsApp us directly</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Scride Smart Solutions Private Limited · ScrideEd · Frazer Town, Bangalore</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/refund-policy/">Refunds</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918660552494" class="whatsapp-float">💬</a>
+
+<script>
+  /* Tab switching */
+  function switchTab(tab) {
+    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+    event.target.closest('.stab').classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+
+  /* Enquiry form submit */
+  function submitEnquiry() {
+    const name    = document.getElementById('s-name').value.trim();
+    const school  = document.getElementById('s-school').value.trim();
+    const phone   = document.getElementById('s-phone').value.trim();
+    const email   = document.getElementById('s-email').value.trim();
+
+    if (!name || !school || !phone || phone.length !== 10 || !/^\d+$/.test(phone) || !email || !email.includes('@')) {
+      alert('Please fill in your name, school name, a valid 10-digit phone number, and email address.');
+      return;
+    }
+
+    const btn = document.getElementById('enq-btn');
+    btn.disabled = true;
+    document.getElementById('enq-btn-text').textContent = 'Sending...';
+
+    /*
+    ── CONNECT TO WEB3FORMS (free):
+    1. Get your access key from https://web3forms.com
+    2. Uncomment the fetch block below
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'YOUR_WEB3FORMS_ACCESS_KEY',
+        subject: 'ScrideEd School Enquiry — ' + school,
+        from_name: name,
+        email: email,
+        phone: phone,
+        school: school,
+        role: document.getElementById('s-role').value,
+        board: document.getElementById('s-board').value,
+        students: document.getElementById('s-students').value,
+        interest: document.getElementById('s-interest').value,
+        message: document.getElementById('s-message').value
+      })
+    })
+    .then(r => r.json())
+    .then(d => { if (d.success) showEnqSuccess(); else { btn.disabled = false; document.getElementById('enq-btn-text').textContent = 'Send Enquiry →'; }})
+    .catch(() => { btn.disabled = false; document.getElementById('enq-btn-text').textContent = 'Send Enquiry →'; });
+    */
+
+    setTimeout(showEnqSuccess, 1000);
+  }
+
+  function showEnqSuccess() {
+    document.getElementById('enq-form').style.display = 'none';
+    document.getElementById('enq-success').classList.add('show');
+  }
+</script>
+</body>
+</html>

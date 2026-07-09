@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About ScrideEd — Bangalore's Teen STEM Platform | Founded by IEEE Honoree</title>
+<meta name="description" content="Meet the team behind ScrideEd. Founded by Asif Ali Ahmed R — IEEE Global Honoree, former CTO, and award-winning engineer — on a mission to give Bangalore teens real tech skills before college.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D0D0D;
+    --paper: #F7F6F2;
+    --electric: #FF4D00;
+    --electric-dim: #FF4D0015;
+    --wire: #1A1A2E;
+    --steel: #4A5568;
+    --grid: #E8E6DF;
+    --white: #FFFFFF;
+    --green: #00C896;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--wire);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    color: var(--white);
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--electric); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links a {
+    color: #CBD5E0;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--electric); }
+
+  .nav-cta {
+    background: var(--electric);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative; z-index: 1;
+    background: var(--wire);
+    padding: 5rem 5% 4rem;
+  }
+
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, #FF4D0018 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: #475569;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb a { color: var(--electric); text-decoration: none; }
+
+  .page-hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 750px;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-hero h1 em { font-style: normal; color: var(--electric); }
+
+  .page-hero p {
+    font-size: 1.1rem;
+    color: #94A3B8;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  .tagline-strip {
+    margin-top: 2.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--electric);
+    text-transform: uppercase;
+  }
+
+  /* SECTIONS */
+  section { position: relative; z-index: 1; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 5%;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 1rem;
+  }
+
+  h2.section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  /* ORIGIN STORY */
+  .story-section { background: var(--white); }
+
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .story-text p {
+    color: var(--steel);
+    line-height: 1.8;
+    font-size: 1.025rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .story-text p:last-child { margin-bottom: 0; }
+
+  .story-text strong { color: var(--ink); font-weight: 600; }
+
+  .story-visual {
+    background: var(--wire);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .timeline-dot {
+    width: 36px; height: 36px;
+    background: var(--electric-dim);
+    border: 2px solid var(--electric);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--electric);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .timeline-content h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.825rem;
+    color: #64748B;
+    line-height: 1.5;
+  }
+
+  .timeline-connector {
+    width: 2px; height: 24px;
+    background: #1E293B;
+    margin-left: 17px;
+  }
+
+  /* MISSION VISION VALUES */
+  .mvv-section { background: var(--paper); }
+
+  .mvv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .mvv-card {
+    background: var(--white);
+    border: 1px solid var(--grid);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mvv-card.mission {
+    grid-column: 1 / -1;
+    background: var(--wire);
+    border-color: var(--electric);
+  }
+
+  .mvv-card.mission h3 { color: var(--white); }
+  .mvv-card.mission p { color: #94A3B8; }
+  .mvv-card.mission .mvv-label { color: var(--electric); }
+
+  .mvv-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--electric);
+    margin-bottom: 0.75rem;
+  }
+
+  .mvv-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .mvv-card p {
+    font-size: 0.95rem;
+    color: var(--steel);
+    line-height: 1.65;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .value-pill {
+    background: var(--white);
+    border: 1px solid var(--grid);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 3px solid var(--electric);
+  }
+
+  .value-pill h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .value-pill p {
+    font-size: 0.875rem;
+    color: var(--steel);
+    line-height: 1.6;
+  }
+
+  /* FOUNDER */
+  .founder-section { background: var(--wire); }
+
+  .founder-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .founder-photo-box {
+    background: #1E293B;
+    border-radius: 12px;
+    aspect-ratio: 3/4;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 2px dashed #334155;
+    color: #475569;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 1rem;
+    position: sticky;
+    top: 80px;
+  }
+
+  .founder-photo-box .photo-icon { font-size: 3rem; }
+
+  .founder-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.03em;
+  }
+
+  .founder-title {
+    font-size: 0.875rem;
+    color: var(--electric);
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+  }
+
+  .founder-bio p {
+    color: #94A3B8;
+    line-height: 1.8;
+    font-size: 0.975rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .creds-section {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .creds-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+
+  .creds-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cred-item {
+    background: #1E293B;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+    color: #CBD5E0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-left: 3px solid var(--electric);
+  }
+
+  .cred-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+  .cred-text { line-height: 1.4; }
+  .cred-text strong { color: var(--white); display: block; font-size: 0.875rem; margin-bottom: 0.15rem; }
+  .cred-text span { color: #64748B; font-size: 0.8rem; }
+
+  .founder-links {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .btn-primary {
+    background: var(--electric);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px #FF4D0040; }
+
+  .btn-ghost {
+    background: transparent;
+    color: #94A3B8;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #334155;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover { border-color: var(--electric); color: var(--electric); }
+
+  /* TEAM */
+  .team-section { background: var(--paper); }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    background: var(--white);
+    border: 1px solid var(--grid);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .team-photo {
+    background: var(--wire);
+    height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .team-info { padding: 1.5rem; }
+
+  .team-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--ink);
+  }
+
+  .team-role {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--electric);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-info p {
+    font-size: 0.875rem;
+    color: var(--steel);
+    line-height: 1.6;
+  }
+
+  .team-placeholder {
+    border: 2px dashed var(--grid);
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem;
+    gap: 0.5rem;
+    color: #CBD5E0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+  }
+
+  /* MILESTONES */
+  .milestones-section { background: var(--ink); }
+
+  .milestones-section .section-heading { color: var(--white); }
+
+  .milestone-track {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid #1E293B;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .milestone {
+    position: relative;
+    padding: 0 0 2.5rem 2rem;
+  }
+
+  .milestone::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 4px;
+    width: 12px; height: 12px;
+    background: var(--electric);
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+  }
+
+  .milestone-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--electric);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.35rem;
+  }
+
+  .milestone h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.35rem;
+  }
+
+  .milestone p {
+    font-size: 0.875rem;
+    color: #4A5568;
+    line-height: 1.6;
+  }
+
+  .milestone.future::before { background: #1E293B; border-color: #334155; }
+  .milestone.future h4 { color: #334155; }
+  .milestone.future .milestone-year { color: #334155; }
+
+  /* PARTNERS */
+  .partners-section { background: var(--white); }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .partner-card {
+    border: 1px solid var(--grid);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--paper);
+  }
+
+  .partner-logo-box {
+    background: var(--white);
+    border: 1px solid var(--grid);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .partner-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--electric);
+  }
+
+  .partner-card p {
+    font-size: 0.875rem;
+    color: var(--steel);
+    line-height: 1.65;
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--electric) 0%, #CC3A00 100%);
+    padding: 5rem 5%;
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+
+  .cta-banner h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    line-height: 1.2;
+  }
+
+  .cta-banner p {
+    color: rgba(255,255,255,0.8);
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--electric);
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.15s;
+  }
+
+  .btn-white:hover { transform: translateY(-2px); }
+
+  .btn-outline-white {
+    background: transparent;
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.5);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 3rem 5% 2rem;
+    position: relative; z-index: 1;
+  }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid #1A1A1A;
+    padding-top: 1.5rem;
+  }
+
+  .footer-bottom p { font-size: 0.8rem; color: #2D3748; }
+
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { font-size: 0.8rem; color: #2D3748; text-decoration: none; }
+  .footer-legal a:hover { color: var(--electric); }
+
+  .footer-logo-text {
+    font-family: 'Space Mono', monospace;
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-logo-text span { color: var(--electric); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: #25D366; color: white;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none; z-index: 200;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .story-layout { grid-template-columns: 1fr; }
+    .founder-layout { grid-template-columns: 1fr; }
+    .founder-photo-box { aspect-ratio: 16/9; position: static; }
+    .mvv-grid { grid-template-columns: 1fr; }
+    .mvv-card.mission { grid-column: 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Scride<span>Ed</span> <small style="font-size:0.55rem;color:#475569;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;margin-left:0.5rem;">Learn · Dream · Build</small></a>
+  <ul class="nav-links">
+    <li><a href="/about.html" class="active">About</a></li>
+    <li><a href="/courses.html">Courses</a></li>
+    <li><a href="/schools/">For Schools</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact.html" class="nav-cta">Get Started →</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="breadcrumb"><a href="/">Home</a> / About Us</div>
+    <h1>We Started ScrideEd Because Indian Teens Deserve Better Than <em>Theory.</em></h1>
+    <p>Most students don't touch real technology until they're 20. We think that's too late. ScrideEd exists to give students aged 13–18 the hands-on experience, confidence, and clarity to choose their future with their eyes open.</p>
+    <div class="tagline-strip">Learn · Dream · Build</div>
+  </div>
+</section>
+
+<!-- ORIGIN STORY -->
+<section class="story-section">
+  <div class="section-inner">
+    <div class="story-layout">
+      <div class="story-text">
+        <div class="section-label">Our Origin Story</div>
+        <h2 class="section-heading">Why ScrideEd Exists</h2>
+        <p>When Asif Ali Ahmed R was a teenager in Bangalore, he loved science. He aced his boards, got into a good engineering college, and showed up on Day 1 ready to <strong>build things.</strong></p>
+        <p>What he found was more theory.</p>
+        <p>It wasn't until his second year that he held a microcontroller for the first time. He built his first real project. And he thought — <strong>"if I'd had this at 15, everything would have been different."</strong></p>
+        <p>Years later, as a CTO building real tech products and as an IEEE-recognised engineer, that thought never left him. So in 2024, he founded ScrideEd — not to be another coaching class, but to be the place where <strong>Bangalore teens finally get to build things that work.</strong></p>
+        <p>Because choosing a career at 17 without ever having touched the tools of that career is like choosing a restaurant from a menu you've never seen. We want your teen to taste it first.</p>
+      </div>
+      <div class="story-visual">
+        <div class="timeline-item">
+          <div class="timeline-dot">17</div>
+          <div class="timeline-content">
+            <h4>The Problem</h4>
+            <p>Asif loves science. Boards done. Engineering college — Day 1. Still no hardware in sight.</p>
+          </div>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <div class="timeline-dot">19</div>
+          <div class="timeline-content">
+            <h4>The Moment</h4>
+            <p>First microcontroller. First real build. The thought: "Why did this take so long?"</p>
+          </div>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <div class="timeline-dot">21</div>
+          <div class="timeline-content">
+            <h4>State Award</h4>
+            <p>Padma Shri Dr. S.K. Shivakumar Innovation Award for real-time lake water monitoring system.</p>
+          </div>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <div class="timeline-dot">23</div>
+          <div class="timeline-content">
+            <h4>IEEE Global Honoree</h4>
+            <p>One of 20 young professionals globally recognised by the IEEE Computer Society.</p>
+          </div>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <div class="timeline-dot">24</div>
+          <div class="timeline-content">
+            <h4>ScrideEd Founded</h4>
+            <p>Because every teen deserves that "first build" moment before they choose a career — not after.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION VISION VALUES -->
+<section class="mvv-section">
+  <div class="section-inner">
+    <div class="section-label">What We Stand For</div>
+    <h2 class="section-heading">Mission, Vision & Values</h2>
+    <div class="mvv-grid">
+      <div class="mvv-card mission">
+        <div class="mvv-label">Our Mission</div>
+        <h3>"To build a nation of innovators and creators — not just consumers of technology."</h3>
+        <p>Every program ScrideEd runs is designed with one purpose: to shift a student from passive consumer to active builder. One workshop at a time.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-label">Our Vision</div>
+        <h3>A Bangalore where every teen has access to real, hands-on STEM education.</h3>
+        <p>We're building toward a future where the 13–18 age gap in India's tech education pipeline is permanently closed — starting in our city, expanding from there.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-label">Our Approach</div>
+        <h3>Short-term exploration. Long-term mastery. Zero gatekeeping.</h3>
+        <p>We believe students deserve the chance to try tech before committing to it. Our workshop model removes the pressure of commitment and replaces it with genuine discovery.</p>
+      </div>
+    </div>
+    <div class="section-label" style="margin-top:0;">Core Values</div>
+    <div class="values-grid">
+      <div class="value-pill">
+        <h4>🔧 Hands-On First</h4>
+        <p>Theory follows building — not the other way around. Students touch hardware from the first hour.</p>
+      </div>
+      <div class="value-pill">
+        <h4>🔍 No-Pressure Exploration</h4>
+        <p>Not every teen will become an engineer. Our workshops help students find out — without a long-term commitment.</p>
+      </div>
+      <div class="value-pill">
+        <h4>🌍 Real Skills, Real World</h4>
+        <p>Every skill we teach has a direct application — in competitions, college projects, and careers.</p>
+      </div>
+      <div class="value-pill">
+        <h4>🏙️ Accessible in Bangalore</h4>
+        <p>Frazer Town-based, city-wide reach. We believe no student should miss out because of location or cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--electric);">The Person Behind ScrideEd</div>
+    <div class="founder-layout">
+      <div>
+        <div class="founder-photo-box">
+          <div class="photo-icon">👤</div>
+          <p style="font-size:0.75rem;color:#475569;">Add your photo here.<br>This is the single biggest<br>trust signal on this page.</p>
+        </div>
+      </div>
+      <div>
+        <div class="founder-name">Asif Ali Ahmed R</div>
+        <div class="founder-title">Founder & Lead Instructor — ScrideEd</div>
+        <div class="founder-bio">
+          <p>Asif is a computer science engineer, former CTO, and globally recognised innovator from Bangalore. He holds a B.E. in Computer Science from BMSIT (VTU) with a 9.05 CGPA, and spent over 3.5 years building real-world backend systems and cloud infrastructure before founding ScrideEd.</p>
+          <p>He was recognised as one of <strong style="color:var(--white);">only 20 young professionals worldwide</strong> by the IEEE Computer Society in their prestigious "20 Under 20s" program — a global honour across all of engineering and computer science. He also won the Padma Shri Dr. S.K. Shivakumar State Innovation Award from the Government of Karnataka for his undergraduate final year project: a real-time autonomous lake water quality monitoring system.</p>
+          <p>He built an autonomous wildfire-detection drone that was financially supported and presented at the IEEE Bangalore Humanitarian Technology Conference. He's been a software engineer at MoneyView, a CTO, and now — the person who shows up every weekend to make sure Bangalore teens get the experience he wished he had at 15.</p>
+        </div>
+        <div class="creds-section">
+          <div class="creds-label">Credentials & Achievements</div>
+          <div class="creds-list">
+            <div class="cred-item">
+              <div class="cred-icon">🏅</div>
+              <div class="cred-text">
+                <strong>IEEE Computer Society — 20 Under 20s Global Honoree</strong>
+                <span>2023 · One of 20 professionals recognised worldwide</span>
+              </div>
+            </div>
+            <div class="cred-item">
+              <div class="cred-icon">🏆</div>
+              <div class="cred-text">
+                <strong>Padma Shri Dr. S.K. Shivakumar State Innovation Award</strong>
+                <span>2021 · Karnataka Science & Technology Academy, Govt. of Karnataka</span>
+              </div>
+            </div>
+            <div class="cred-item">
+              <div class="cred-icon">🚁</div>
+              <div class="cred-text">
+                <strong>IEEE Humanitarian Technology Conference — Presenter</strong>
+                <span>Autonomous Wildfire Detection Drone using ROS & Image Processing</span>
+              </div>
+            </div>
+            <div class="cred-item">
+              <div class="cred-icon">🎓</div>
+              <div class="cred-text">
+                <strong>B.E. Computer Science — BMSIT, VTU Bangalore</strong>
+                <span>CGPA: 9.05 / 10 · Graduated 2022</span>
+              </div>
+            </div>
+            <div class="cred-item">
+              <div class="cred-icon">💼</div>
+              <div class="cred-text">
+                <strong>Former CTO · Ex-Software Engineer at MoneyView</strong>
+                <span>3.5+ years building production-grade systems at scale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="founder-links">
+          <a href="https://www.linkedin.com/in/asif-ali-ahmed-r-01539817a" target="_blank" class="btn-primary">View LinkedIn Profile →</a>
+          <a href="/contact.html" class="btn-ghost">Book a Workshop →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="section-inner">
+    <div class="section-label">The Team</div>
+    <h2 class="section-heading">Who Runs ScrideEd</h2>
+    <p style="color:var(--steel);margin-bottom:2.5rem;max-width:560px;">We're a small, passionate team in Bangalore. Small enough to care about every student. Experienced enough to teach what matters.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo">👤</div>
+        <div class="team-info">
+          <h3>Asif Ali Ahmed R</h3>
+          <div class="team-role">Founder & Lead Instructor</div>
+          <p>IEEE Global Honoree. Former CTO. Teaches robotics, Arduino, and IoT. Runs all workshops personally.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">👤</div>
+        <div class="team-info">
+          <h3>Add Instructor Name</h3>
+          <div class="team-role">Workshop Instructor</div>
+          <p>Add background, specialisation, and experience here. This builds significant parent trust.</p>
+        </div>
+      </div>
+      <div class="team-placeholder">
+        <div style="font-size:2rem;">➕</div>
+        <strong>We're Growing</strong>
+        <p>Interested in teaching STEM to teens in Bangalore? We'd love to hear from you.</p>
+        <a href="mailto:hello@scrideed.com" style="color:var(--electric);font-size:0.8rem;margin-top:0.5rem;">hello@scrideed.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="milestones-section">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--electric);">Our Journey</div>
+    <h2 class="section-heading" style="color:var(--white);margin-bottom:3rem;">We're Just Getting Started.</h2>
+    <div class="milestone-track">
+      <div class="milestone">
+        <div class="milestone-year">2024</div>
+        <h4>ScrideEd Founded</h4>
+        <p>Scride Smart Solutions Private Limited registered in Bangalore. ScrideEd brand launched with a clear mission: hands-on STEM for Bangalore teens aged 13–18.</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2025</div>
+        <h4>First Partnerships</h4>
+        <p>Learning partnerships established with Future Forge and Musaedatun. Community foundations built.</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2025</div>
+        <h4>First Workshops — 50+ Students</h4>
+        <p>First two hands-on workshops conducted in Bangalore. 50+ students trained across Python and introductory tech sessions. Real feedback. Real learning. Real builds.</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2026</div>
+        <h4>Arduino & Robotics Bootcamps Launched</h4>
+        <p>Structured weekend bootcamps launched for Bangalore teens. Arduino Bootcamp opens July 2026. Robotics Bootcamp opens August 2026.</p>
+      </div>
+      <div class="milestone future">
+        <div class="milestone-year">2026 →</div>
+        <h4>School Partnerships & Expansion</h4>
+        <p>First school lab setups. Curriculum partnerships. Growing to 500+ students trained across Bangalore.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="section-inner">
+    <div class="section-label">Partners & Collaborators</div>
+    <h2 class="section-heading">Who We Work With</h2>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <div class="partner-logo-box">Future Forge</div>
+        <div class="partner-type">Learning Partner</div>
+        <p>Add one sentence about Future Forge and your relationship with them — sponsor, curriculum partner, community collaborator, etc. This gives parents context.</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo-box">Musaedatun</div>
+        <div class="partner-type">Community Partner</div>
+        <p>Add one sentence about Musaedatun and your relationship with them. Partner logos without context reduce trust rather than build it.</p>
+      </div>
+      <div class="partner-card" style="border:2px dashed var(--grid);background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.75rem;">
+        <div style="font-size:2rem;">🤝</div>
+        <strong style="color:var(--steel);">Become a Partner</strong>
+        <p>School, organisation, or platform interested in collaborating? We'd love to talk.</p>
+        <a href="mailto:hello@scrideed.com" style="color:var(--electric);font-size:0.875rem;font-weight:600;">hello@scrideed.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <p style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);margin-bottom:1rem;">LEARN · DREAM · BUILD</p>
+  <h2>Ready to See What Your Teen Can Build?</h2>
+  <p>Browse our upcoming workshops and get your child into a seat. No experience needed. Just curiosity.</p>
+  <div class="cta-btns">
+    <a href="/courses.html" class="btn-white">View All Workshops →</a>
+    <a href="https://wa.me/918660552494" class="btn-outline-white">💬 WhatsApp Us</a>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="footer-bottom">
+      <p>© 2026 Scride Smart Solutions Private Limited · ScrideEd is a registered brand · Frazer Town, Bangalore</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/refund-policy/">Refunds</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918660552494" class="whatsapp-float" title="WhatsApp ScrideEd">💬</a>
+
+</body>
+</html>

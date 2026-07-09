@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM, Robotics & Coding Courses for Teens in Bangalore | ScrideEd</title>
+<meta name="description" content="Explore ScrideEd's hands-on workshops and monthly courses for students aged 13–18 in Bangalore. Robotics Bootcamp, Arduino Bootcamp, Python for Teens. Weekend workshops available. No experience needed.">
+<meta property="og:title" content="STEM & Robotics Courses for Teens in Bangalore | ScrideEd">
+<meta property="og:description" content="Hands-on robotics, Arduino & coding workshops for teens aged 13–18. Weekend workshops in Frazer Town, Bangalore. Taught by an IEEE Global Honoree.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- JSON-LD Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "ScrideEd STEM Courses for Teens — Bangalore",
+  "itemListElement": [
+    {
+      "@type": "Course",
+      "position": 1,
+      "name": "Robotics Bootcamp",
+      "description": "Build and program your first working robot from scratch. 2-day weekend workshop for teens aged 13-18 in Bangalore.",
+      "provider": { "@type": "Organization", "name": "ScrideEd", "url": "https://scrideed.com" },
+      "url": "https://scrideed.com/courses/robotics-workshop-bangalore/"
+    },
+    {
+      "@type": "Course",
+      "position": 2,
+      "name": "Arduino Bootcamp",
+      "description": "Learn electronics and build your first IoT project using Arduino. 2-day weekend workshop for beginners aged 13-18.",
+      "provider": { "@type": "Organization", "name": "ScrideEd", "url": "https://scrideed.com" },
+      "url": "https://scrideed.com/courses/arduino-bootcamp-bangalore/"
+    },
+    {
+      "@type": "Course",
+      "position": 3,
+      "name": "Python for Teens",
+      "description": "Real Python programming for students aged 13-18. 4-week monthly course in Bangalore.",
+      "provider": { "@type": "Organization", "name": "ScrideEd", "url": "https://scrideed.com" },
+      "url": "https://scrideed.com/courses/python-for-teens-bangalore/"
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --ink:       #0D0D0D;
+    --paper:     #F7F6F2;
+    --electric:  #FF4D00;
+    --elec-dim:  #FF4D0015;
+    --elec-mid:  #FF4D0030;
+    --wire:      #1A1A2E;
+    --steel:     #4A5568;
+    --grid:      #E8E6DF;
+    --white:     #FFFFFF;
+    --green:     #00C896;
+    --amber:     #F59E0B;
+    --blue:      #3B82F6;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* Subtle grid texture */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--wire);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    color: var(--white); font-size: 1.2rem;
+    letter-spacing: -0.02em; text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .nav-logo span { color: var(--electric); }
+
+  .nav-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem; color: #475569;
+    font-weight: 400; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links a {
+    color: #CBD5E0; text-decoration: none;
+    font-size: 0.875rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--electric); }
+  .nav-links a.active { color: var(--electric); }
+
+  .nav-cta {
+    background: var(--electric);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+
+  /* ─── PAGE HERO ─── */
+  .page-hero {
+    position: relative; z-index: 1;
+    background: var(--wire);
+    padding: 4.5rem 5% 3.5rem;
+    overflow: hidden;
+  }
+
+  .page-hero::after {
+    content: '';
+    position: absolute; right: -60px; top: -80px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, #FF4D0018 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner { max-width: 1100px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; color: #475569;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb a { color: var(--electric); text-decoration: none; }
+
+  .page-hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 700; color: var(--white);
+    line-height: 1.15; letter-spacing: -0.03em;
+    max-width: 700px; margin-bottom: 1.25rem;
+  }
+
+  .page-hero h1 em { font-style: normal; color: var(--electric); }
+
+  .page-hero p {
+    font-size: 1.05rem; color: #94A3B8;
+    max-width: 560px; line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  /* Course filter tabs */
+  .filter-tabs {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+
+  .filter-tab {
+    background: #1E293B;
+    color: #64748B;
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500;
+    border: 1px solid #334155;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .filter-tab:hover, .filter-tab.active {
+    background: var(--electric);
+    color: var(--white);
+    border-color: var(--electric);
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { position: relative; z-index: 1; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 5%;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--electric);
+    margin-bottom: 0.75rem;
+  }
+
+  h2.section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 700; letter-spacing: -0.03em;
+    color: var(--ink); line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-sub {
+    font-size: 1rem; color: var(--steel);
+    max-width: 580px; line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── COURSE CARDS ─── */
+  .courses-section { background: var(--white); }
+
+  /* Each full course block */
+  .course-block {
+    border: 1px solid var(--grid);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    background: var(--paper);
+    transition: box-shadow 0.25s;
+  }
+
+  .course-block:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+  }
+
+  .course-block.featured {
+    border: 2px solid var(--electric);
+  }
+
+  .course-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 1.5rem;
+    padding: 2rem 2.5rem 1.5rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--grid);
+  }
+
+  .course-badge-row {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.3rem 0.7rem;
+    border-radius: 100px; font-weight: 700;
+  }
+
+  .badge-hot   { background: var(--electric); color: var(--white); }
+  .badge-new   { background: var(--green); color: var(--ink); }
+  .badge-soon  { background: #1E293B; color: #64748B; border: 1px solid #334155; }
+  .badge-weekend { background: var(--elec-dim); color: var(--electric); border: 1px solid var(--elec-mid); }
+  .badge-monthly { background: #EFF6FF; color: var(--blue); border: 1px solid #BFDBFE; }
+
+  .course-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+
+  .course-tagline {
+    font-size: 0.975rem; color: var(--steel);
+    line-height: 1.5; max-width: 540px;
+  }
+
+  .course-quick-meta {
+    display: flex; flex-direction: column;
+    gap: 0.4rem; text-align: right; flex-shrink: 0;
+  }
+
+  .meta-pill {
+    background: var(--paper);
+    border: 1px solid var(--grid);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.78rem; color: var(--steel);
+    white-space: nowrap;
+    display: flex; align-items: center; gap: 0.4rem;
+    justify-content: flex-end;
+  }
+
+  .meta-pill strong { color: var(--ink); font-weight: 600; }
+
+  /* Course body grid */
+  .course-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .course-description {
+    padding: 2rem 2.5rem;
+    border-right: 1px solid var(--grid);
+  }
+
+  .course-description p {
+    font-size: 0.95rem; color: var(--steel);
+    line-height: 1.75; margin-bottom: 1.5rem;
+  }
+
+  .learn-list-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--electric);
+    margin-bottom: 0.75rem;
+  }
+
+  .learn-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+
+  .learn-list li {
+    font-size: 0.9rem; color: var(--steel);
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .learn-list li::before {
+    content: '→';
+    color: var(--electric); font-weight: 700;
+    font-size: 0.8rem; flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .course-sidebar {
+    padding: 2rem 2.5rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+    background: var(--paper);
+  }
+
+  /* Detail rows */
+  .detail-group { display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .detail-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #94A3B8;
+  }
+
+  .detail-value {
+    font-size: 0.9rem; font-weight: 500;
+    color: var(--ink);
+  }
+
+  .detail-row {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--grid);
+  }
+
+  .detail-row:last-child { border-bottom: none; }
+
+  .detail-icon { font-size: 1rem; flex-shrink: 0; }
+
+  .detail-row-label { font-size: 0.8rem; color: #94A3B8; line-height: 1; }
+  .detail-row-value { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+
+  /* CTA row */
+  .course-cta {
+    padding: 1.5rem 2.5rem;
+    background: var(--white);
+    border-top: 1px solid var(--grid);
+    display: flex; align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+
+  .course-cta-note {
+    font-size: 0.825rem; color: var(--steel);
+  }
+
+  .course-cta-note strong { color: var(--ink); }
+
+  .cta-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--electric); color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px #FF4D0035;
+  }
+
+  .btn-secondary {
+    background: transparent; color: var(--ink);
+    padding: 0.75rem 1.5rem; border-radius: 4px;
+    border: 1px solid var(--grid);
+    font-weight: 500; font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover { border-color: var(--electric); color: var(--electric); }
+
+  .btn-disabled {
+    background: #1E293B; color: #475569;
+    padding: 0.75rem 1.5rem; border-radius: 4px;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none; cursor: not-allowed;
+    white-space: nowrap;
+  }
+
+  /* Coming soon overlay */
+  .coming-soon-bar {
+    background: #0F172A;
+    border-top: 1px solid #1E293B;
+    padding: 1rem 2.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .coming-soon-bar p {
+    font-size: 0.875rem; color: #64748B;
+    flex: 1;
+  }
+
+  .coming-soon-bar input {
+    background: #1E293B; border: 1px solid #334155;
+    color: var(--white); padding: 0.6rem 1rem;
+    border-radius: 4px; font-size: 0.85rem;
+    outline: none; width: 220px;
+  }
+
+  .coming-soon-bar input::placeholder { color: #475569; }
+
+  .coming-soon-bar input:focus { border-color: var(--electric); }
+
+  .btn-notify {
+    background: var(--electric); color: var(--white);
+    padding: 0.6rem 1.25rem; border-radius: 4px;
+    font-weight: 600; font-size: 0.85rem;
+    border: none; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    white-space: nowrap;
+  }
+
+  /* ─── COMPARISON TABLE ─── */
+  .compare-section { background: var(--paper); }
+
+  .compare-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--grid);
+    border-radius: 10px;
+    background: var(--white);
+  }
+
+  table.compare {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .compare thead tr {
+    background: var(--wire);
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .compare thead th {
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .compare thead th:first-child { color: #64748B; font-weight: 400; font-size: 0.75rem; }
+  .compare thead th.highlight { color: var(--electric); }
+
+  .compare tbody tr {
+    border-bottom: 1px solid var(--grid);
+    transition: background 0.15s;
+  }
+
+  .compare tbody tr:last-child { border-bottom: none; }
+  .compare tbody tr:hover { background: var(--paper); }
+
+  .compare tbody td {
+    padding: 1rem 1.5rem;
+    color: var(--steel);
+    vertical-align: middle;
+  }
+
+  .compare tbody td:first-child {
+    font-weight: 500; color: var(--ink);
+    font-size: 0.875rem;
+  }
+
+  .compare tbody td.highlight {
+    background: #FFF8F5;
+  }
+
+  .check { color: var(--green); font-size: 1.1rem; }
+  .cross { color: #CBD5E0; font-size: 1.1rem; }
+  .partial { color: var(--amber); font-size: 0.85rem; font-weight: 600; }
+
+  /* ─── PATHWAY ─── */
+  .pathway-section { background: var(--wire); }
+  .pathway-section .section-heading { color: var(--white); }
+  .pathway-section .section-sub { color: #64748B; }
+
+  .pathway-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .pathway-track::before {
+    content: '';
+    position: absolute;
+    top: 3rem; left: calc(16.66% + 1px);
+    right: calc(16.66% + 1px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--electric), #FF4D0060);
+    z-index: 0;
+  }
+
+  .pathway-step {
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .pathway-step.current {
+    border-color: var(--electric);
+    background: #1A1535;
+  }
+
+  .step-num {
+    width: 48px; height: 48px;
+    background: var(--elec-dim);
+    border: 2px solid var(--electric);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem; font-weight: 700;
+    color: var(--electric);
+    margin: 0 auto 1.25rem;
+  }
+
+  .pathway-step h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+
+  .pathway-step p {
+    font-size: 0.85rem; color: #64748B;
+    line-height: 1.6;
+  }
+
+  .pathway-course-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--elec-dim);
+    color: var(--electric);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem; border-radius: 100px;
+    text-transform: uppercase;
+  }
+
+  /* ─── SCHOOL STRIP ─── */
+  .school-strip {
+    background: var(--ink);
+    position: relative; z-index: 1;
+    padding: 3.5rem 5%;
+  }
+
+  .school-strip-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+  }
+
+  .school-strip h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.02em;
+    max-width: 480px;
+  }
+
+  .school-strip h3 span { color: var(--electric); }
+
+  .school-offerings-mini {
+    display: flex; gap: 0.6rem; flex-wrap: wrap;
+  }
+
+  .offering-tag {
+    background: #1A1A2E;
+    border: 1px solid #1E293B;
+    color: #64748B; font-size: 0.8rem;
+    padding: 0.4rem 0.875rem; border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* ─── FAQ ─── */
+  .faq-section { background: var(--white); }
+
+  .faq-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .faq-item {
+    border: 1px solid var(--grid);
+    border-radius: 6px; overflow: hidden;
+  }
+
+  .faq-q {
+    padding: 1.1rem 1.4rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 600;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--paper); user-select: none;
+    gap: 1rem;
+  }
+
+  .faq-q:hover { background: var(--white); }
+
+  .faq-toggle {
+    width: 22px; height: 22px;
+    background: var(--elec-dim);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--electric); font-size: 1rem;
+    flex-shrink: 0; line-height: 1;
+    transition: background 0.2s;
+  }
+
+  .faq-item.open .faq-toggle { background: var(--electric); color: var(--white); }
+
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.2s;
+    font-size: 0.9rem; color: var(--steel);
+    line-height: 1.7; background: var(--white);
+    padding: 0 1.4rem;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding: 1.1rem 1.4rem;
+  }
+
+  /* FAQ sidebar */
+  .faq-sidebar {
+    background: var(--wire);
+    border-radius: 10px;
+    padding: 2.5rem;
+    position: sticky; top: 80px;
+  }
+
+  .faq-sidebar h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+
+  .faq-sidebar p {
+    font-size: 0.875rem; color: #64748B;
+    line-height: 1.65; margin-bottom: 1.5rem;
+  }
+
+  .faq-sidebar-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: #1E293B; border-radius: 6px;
+    margin-bottom: 0.6rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    border: 1px solid #334155;
+  }
+
+  .faq-sidebar-item:hover { background: #263147; border-color: var(--electric); }
+
+  .faq-sidebar-icon {
+    width: 36px; height: 36px;
+    background: var(--elec-dim);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+
+  .faq-sidebar-text strong {
+    display: block;
+    font-size: 0.875rem; font-weight: 600;
+    color: var(--white);
+  }
+
+  .faq-sidebar-text span {
+    font-size: 0.775rem; color: #64748B;
+  }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    background: linear-gradient(135deg, var(--electric) 0%, #CC3A00 100%);
+    padding: 5.5rem 5%;
+    text-align: center;
+    position: relative; z-index: 1; overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '{ }';
+    position: absolute;
+    font-family: 'Space Mono', monospace;
+    font-size: 18rem; color: white; opacity: 0.04;
+    right: -1rem; bottom: -3rem;
+    pointer-events: none; line-height: 1;
+  }
+
+  .final-cta .tagline-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase; margin-bottom: 1.25rem;
+  }
+
+  .final-cta h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.75rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.03em;
+    max-width: 640px; margin: 0 auto 1rem;
+    line-height: 1.2;
+  }
+
+  .final-cta p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem; max-width: 500px;
+    margin: 0 auto 2.5rem; line-height: 1.65;
+  }
+
+  .final-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-white {
+    background: var(--white); color: var(--electric);
+    padding: 0.875rem 2rem; border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; text-decoration: none;
+    transition: transform 0.15s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+
+  .btn-white:hover { transform: translateY(-2px); }
+
+  .btn-outline-white {
+    background: transparent; color: var(--white);
+    padding: 0.875rem 2rem; border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.5);
+    font-weight: 600; text-decoration: none;
+    transition: border-color 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+
+  .btn-outline-white:hover { border-color: white; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    padding: 2rem 5%;
+    position: relative; z-index: 1;
+  }
+
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid #1A1A1A;
+    padding-top: 1.5rem;
+  }
+
+  .footer-bottom p { font-size: 0.8rem; color: #2D3748; }
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { font-size: 0.8rem; color: #2D3748; text-decoration: none; }
+  .footer-legal a:hover { color: var(--electric); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: #25D366; color: white;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none; z-index: 200;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .course-body { grid-template-columns: 1fr; }
+    .course-description { border-right: none; border-bottom: 1px solid var(--grid); }
+    .course-header { grid-template-columns: 1fr; }
+    .course-quick-meta { text-align: left; flex-direction: row; flex-wrap: wrap; }
+    .meta-pill { justify-content: flex-start; }
+    .pathway-track { grid-template-columns: 1fr; }
+    .pathway-track::before { display: none; }
+    .faq-cols { grid-template-columns: 1fr; }
+    .faq-sidebar { position: static; }
+  }
+
+  @media (max-width: 600px) {
+    .course-header { padding: 1.5rem; }
+    .course-description, .course-sidebar { padding: 1.5rem; }
+    .course-cta { flex-direction: column; align-items: flex-start; }
+    .coming-soon-bar { flex-direction: column; align-items: flex-start; }
+    .coming-soon-bar input { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    Scride<span>Ed</span>
+    <span class="nav-tagline">Learn · Dream · Build</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/courses.html" class="active">Courses</a></li>
+    <li><a href="/schools/">For Schools</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact.html" class="nav-cta">Get Started →</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a> / Courses</div>
+    <h1>Courses Built for <em>Curious Teens.</em> Not Textbook Chapters.</h1>
+    <p>Every ScrideEd course is designed around one idea: you leave with something you built. Weekend workshops and monthly courses for students aged 13–18 in Bangalore. Zero experience needed.</p>
+    <div class="filter-tabs">
+      <a class="filter-tab active" href="#all">All Courses</a>
+      <a class="filter-tab" href="#robotics">Robotics</a>
+      <a class="filter-tab" href="#arduino">Arduino & IoT</a>
+      <a class="filter-tab" href="#coding">Coding</a>
+      <a class="filter-tab" href="#schools">For Schools</a>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-section" id="all">
+  <div class="section-inner">
+    <div class="section-label">Weekend Workshops & Monthly Courses</div>
+    <h2 class="section-heading">Pick Your Starting Point</h2>
+    <p class="section-sub">Not sure which course is right? Start with a weekend workshop — low commitment, high impact. If your teen loves it, there's always a next step.</p>
+
+    <!-- ── COURSE 1: ARDUINO BOOTCAMP ── -->
+    <div class="course-block featured" id="arduino">
+      <div class="course-header">
+        <div>
+          <div class="course-badge-row">
+            <span class="badge badge-hot">⭐ Most Popular</span>
+            <span class="badge badge-weekend">Weekend Workshop</span>
+            <span class="badge badge-new">Seats Open</span>
+          </div>
+          <div class="course-title">⚡ Arduino Bootcamp — Bangalore</div>
+          <p class="course-tagline">Understand electronics. Build your first IoT device. The world's most-used learning platform for hands-on tech — in one weekend.</p>
+        </div>
+        <div class="course-quick-meta">
+          <div class="meta-pill">📅 <strong>July 2026</strong></div>
+          <div class="meta-pill">⏱ <strong>2-day weekend</strong></div>
+          <div class="meta-pill">👤 Age <strong>13–18</strong></div>
+          <div class="meta-pill">📍 <strong>Frazer Town, BLR</strong></div>
+        </div>
+      </div>
+
+      <div class="course-body">
+        <div class="course-description">
+          <p>Arduino is the world's most widely-used platform for learning electronics and embedded systems. It's used in university engineering labs, by professional engineers, and in competitive robotics worldwide — making it one of the most valuable first skills a teenager can learn.</p>
+          <p>In this 2-day bootcamp, complete beginners go from zero to a working IoT project. Students leave with real electronics knowledge, actual code they wrote, and a physical device they built themselves.</p>
+          <div class="learn-list-label">What you'll learn</div>
+          <ul class="learn-list">
+            <li>What Arduino is and why engineers actually use it</li>
+            <li>Reading inputs: buttons, sensors, temperature, light</li>
+            <li>Controlling outputs: LEDs, motors, buzzers, displays</li>
+            <li>Writing real Arduino code from scratch (not drag-and-drop)</li>
+            <li>Connecting components and reading circuit diagrams</li>
+            <li>Building and debugging a complete IoT project</li>
+          </ul>
+        </div>
+        <div class="course-sidebar">
+          <div class="detail-group">
+            <div class="detail-label">Course Details</div>
+            <div class="detail-row">
+              <div class="detail-icon">🗓️</div>
+              <div>
+                <div class="detail-row-label">Next Batch</div>
+                <div class="detail-row-value">July 2026 — Saturday & Sunday</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">⏱</div>
+              <div>
+                <div class="detail-row-label">Duration</div>
+                <div class="detail-row-value">2 days (approx. 6 hrs/day)</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">📍</div>
+              <div>
+                <div class="detail-row-label">Location</div>
+                <div class="detail-row-value">Frazer Town, Bangalore</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">👤</div>
+              <div>
+                <div class="detail-row-label">Who It's For</div>
+                <div class="detail-row-value">Ages 13–18 · Zero experience</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">🧰</div>
+              <div>
+                <div class="detail-row-label">Kit</div>
+                <div class="detail-row-value">Arduino kit included in fee</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">🎓</div>
+              <div>
+                <div class="detail-row-label">Instructor</div>
+                <div class="detail-row-value">Asif Ali Ahmed R — IEEE Honoree</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-cta">
+        <div class="course-cta-note">
+          <strong>Limited seats per batch.</strong> Kit included. Full refund if cancelled 48hrs before.
+        </div>
+        <div class="cta-buttons">
+          <a href="https://wa.me/918660552494?text=Hi!%20I%27m%20interested%20in%20the%20Arduino%20Bootcamp%20for%20my%20teen." class="btn-secondary">💬 Ask a Question</a>
+          <a href="https://forms.gle/LDaKzVf9h2hfmn22A" target="_blank" class="btn-primary">Register Now →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── COURSE 2: ROBOTICS BOOTCAMP ── -->
+    <div class="course-block" id="robotics">
+      <div class="course-header">
+        <div>
+          <div class="course-badge-row">
+            <span class="badge badge-weekend">Weekend Workshop</span>
+            <span class="badge badge-new">Seats Open</span>
+          </div>
+          <div class="course-title">🤖 Robotics Bootcamp — Bangalore</div>
+          <p class="course-tagline">Build and programme your first working robot from scratch. Mechanical assembly, electronics, and code — all in one weekend.</p>
+        </div>
+        <div class="course-quick-meta">
+          <div class="meta-pill">📅 <strong>August 2026</strong></div>
+          <div class="meta-pill">⏱ <strong>2-day weekend</strong></div>
+          <div class="meta-pill">👤 Age <strong>13–18</strong></div>
+          <div class="meta-pill">📍 <strong>Frazer Town, BLR</strong></div>
+        </div>
+      </div>
+
+      <div class="course-body">
+        <div class="course-description">
+          <p>Robotics is one of the most powerful entry points into STEM for teenagers. It combines mechanical thinking, electronics, and programming in a way that delivers an immediately visible, rewarding result — by Sunday, your teen has a physical robot they built that moves and responds to their code.</p>
+          <p>This bootcamp is designed for complete beginners. No prior experience with circuits, code, or engineering is needed. Just curiosity.</p>
+          <div class="learn-list-label">What you'll learn</div>
+          <ul class="learn-list">
+            <li>How robots sense and respond to the physical world</li>
+            <li>Basic electronics: components, connections, power</li>
+            <li>Mechanical assembly and motor control</li>
+            <li>Writing code to control robot movement and behaviour</li>
+            <li>Using sensors to make the robot react to its environment</li>
+            <li>Troubleshooting hardware and software like an engineer</li>
+          </ul>
+        </div>
+        <div class="course-sidebar">
+          <div class="detail-group">
+            <div class="detail-label">Course Details</div>
+            <div class="detail-row">
+              <div class="detail-icon">🗓️</div>
+              <div>
+                <div class="detail-row-label">Next Batch</div>
+                <div class="detail-row-value">August 2026 — Saturday & Sunday</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">⏱</div>
+              <div>
+                <div class="detail-row-label">Duration</div>
+                <div class="detail-row-value">2 days (approx. 6 hrs/day)</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">📍</div>
+              <div>
+                <div class="detail-row-label">Location</div>
+                <div class="detail-row-value">Frazer Town, Bangalore</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">👤</div>
+              <div>
+                <div class="detail-row-label">Who It's For</div>
+                <div class="detail-row-value">Ages 13–18 · Zero experience</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">🧰</div>
+              <div>
+                <div class="detail-row-label">Kit</div>
+                <div class="detail-row-value">Robotics kit included in fee</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">🎓</div>
+              <div>
+                <div class="detail-row-label">Instructor</div>
+                <div class="detail-row-value">Asif Ali Ahmed R — IEEE Honoree</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-cta">
+        <div class="course-cta-note">
+          <strong>Limited seats per batch.</strong> Kit included. Full refund if cancelled 48hrs before.
+        </div>
+        <div class="cta-buttons">
+          <a href="https://wa.me/918660552494?text=Hi!%20I%27m%20interested%20in%20the%20Robotics%20Bootcamp%20for%20my%20teen." class="btn-secondary">💬 Ask a Question</a>
+          <a href="https://forms.gle/HEQwnBu2qKFp6ERG7" target="_blank" class="btn-primary">Register Now →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── COURSE 3: PYTHON FOR TEENS ── -->
+    <div class="course-block" id="coding">
+      <div class="course-header">
+        <div>
+          <div class="course-badge-row">
+            <span class="badge badge-monthly">Monthly Course</span>
+            <span class="badge badge-soon">Coming Soon</span>
+          </div>
+          <div class="course-title">🐍 Python for Teens — Bangalore</div>
+          <p class="course-tagline">Real code. Real projects. Not drag-and-drop. Python is the world's most in-demand language — learn it before college, not during.</p>
+        </div>
+        <div class="course-quick-meta">
+          <div class="meta-pill">📅 <strong>Coming Soon</strong></div>
+          <div class="meta-pill">⏱ <strong>4-week course</strong></div>
+          <div class="meta-pill">👤 Age <strong>13–18</strong></div>
+          <div class="meta-pill">📍 <strong>Frazer Town, BLR</strong></div>
+        </div>
+      </div>
+
+      <div class="course-body">
+        <div class="course-description">
+          <p>Python powers artificial intelligence, data science, web applications, automation, and more. It's consistently the most in-demand programming language globally — and one of the most learnable first languages for a teenager who is serious about technology.</p>
+          <p>This 4-week monthly course goes beyond the basics. Students write real programs that do real things — not toy exercises. By the end, they have a portfolio project and the foundation to go further in any direction.</p>
+          <div class="learn-list-label">What you'll learn</div>
+          <ul class="learn-list">
+            <li>Python fundamentals: variables, data types, loops, functions</li>
+            <li>Working with files, lists, and dictionaries</li>
+            <li>Building small automation tools and scripts</li>
+            <li>Introduction to APIs and real-world data</li>
+            <li>Logic building and debugging practice</li>
+            <li>Final project: a Python programme of your own design</li>
+          </ul>
+        </div>
+        <div class="course-sidebar">
+          <div class="detail-group">
+            <div class="detail-label">Course Details</div>
+            <div class="detail-row">
+              <div class="detail-icon">🗓️</div>
+              <div>
+                <div class="detail-row-label">Launch</div>
+                <div class="detail-row-value">Date to be announced</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">⏱</div>
+              <div>
+                <div class="detail-row-label">Duration</div>
+                <div class="detail-row-value">4 weeks · Weekend sessions</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">📍</div>
+              <div>
+                <div class="detail-row-label">Location</div>
+                <div class="detail-row-value">Frazer Town, Bangalore</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">👤</div>
+              <div>
+                <div class="detail-row-label">Who It's For</div>
+                <div class="detail-row-value">Ages 13–18 · Beginners welcome</div>
+              </div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-icon">💻</div>
+              <div>
+                <div class="detail-row-label">Requirements</div>
+                <div class="detail-row-value">Laptop (can be brought or arranged)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="coming-soon-bar">
+        <p>Be the first to know when Python for Teens launches. Drop your email and we'll notify you.</p>
+        <input type="email" placeholder="your@email.com" id="notify-email" />
+        <button class="btn-notify" onclick="handleNotify()">Notify Me →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare-section">
+  <div class="section-inner">
+    <div class="section-label">Side by Side</div>
+    <h2 class="section-heading">Which Course Is Right?</h2>
+    <p class="section-sub">Not sure where to start? This table helps you pick the right first step for your teen.</p>
+    <div class="compare-table-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="highlight">⚡ Arduino Bootcamp</th>
+            <th>🤖 Robotics Bootcamp</th>
+            <th>🐍 Python for Teens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Duration</td>
+            <td class="highlight">2-day weekend</td>
+            <td>2-day weekend</td>
+            <td>4-week monthly</td>
+          </tr>
+          <tr>
+            <td>Prior experience needed</td>
+            <td class="highlight"><span class="check">✓</span> None</td>
+            <td><span class="check">✓</span> None</td>
+            <td><span class="check">✓</span> None</td>
+          </tr>
+          <tr>
+            <td>Hands-on from Day 1</td>
+            <td class="highlight"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Kit included</td>
+            <td class="highlight"><span class="check">✓</span> Arduino kit</td>
+            <td><span class="check">✓</span> Robotics kit</td>
+            <td><span class="cross">—</span> Laptop needed</td>
+          </tr>
+          <tr>
+            <td>Physical build by end</td>
+            <td class="highlight"><span class="check">✓</span> IoT device</td>
+            <td><span class="check">✓</span> Working robot</td>
+            <td><span class="partial">Code project</span></td>
+          </tr>
+          <tr>
+            <td>Coding involved</td>
+            <td class="highlight"><span class="check">✓</span> Arduino C</td>
+            <td><span class="check">✓</span> Arduino C</td>
+            <td><span class="check">✓</span> Python</td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td class="highlight">Electronics + code curious teens</td>
+            <td>Loves physical builds & machines</td>
+            <td>Wants career in software / AI</td>
+          </tr>
+          <tr>
+            <td>Next batch</td>
+            <td class="highlight">July 2026</td>
+            <td>August 2026</td>
+            <td>Coming soon</td>
+          </tr>
+          <tr>
+            <td>Register</td>
+            <td class="highlight"><a href="https://forms.gle/LDaKzVf9h2hfmn22A" target="_blank" style="color:var(--electric);font-weight:600;">Register →</a></td>
+            <td><a href="https://forms.gle/HEQwnBu2qKFp6ERG7" target="_blank" style="color:var(--electric);font-weight:600;">Register →</a></td>
+            <td style="color:#475569;">Notify me</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1rem;font-size:0.85rem;color:var(--steel);">
+      Still unsure? <a href="https://wa.me/918660552494?text=Hi!%20I%27m%20not%20sure%20which%20ScrideEd%20course%20is%20right%20for%20my%20teen.%20Can%20you%20help?" style="color:var(--electric);font-weight:600;">WhatsApp us</a> and we'll help you choose based on your teen's interests.
+    </p>
+  </div>
+</section>
+
+<!-- LEARNING PATHWAY -->
+<section class="pathway-section">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--electric);">The Learning Journey</div>
+    <h2 class="section-heading">One Weekend Can Change Everything.</h2>
+    <p class="section-sub">Start with a single workshop. Go as far as your curiosity takes you.</p>
+    <div class="pathway-track">
+      <div class="pathway-step current">
+        <div class="step-num">1</div>
+        <h3>Try It</h3>
+        <p>One weekend workshop. Zero commitment. Zero experience needed. Find out if tech is for you before you decide anything.</p>
+        <span class="pathway-course-tag">Arduino or Robotics Bootcamp</span>
+      </div>
+      <div class="pathway-step">
+        <div class="step-num">2</div>
+        <h3>Go Deeper</h3>
+        <p>Loved the weekend? A monthly course takes you from beginner to project-ready. Build a portfolio. Learn to code properly.</p>
+        <span class="pathway-course-tag">Python for Teens · Coming Soon</span>
+      </div>
+      <div class="pathway-step">
+        <div class="step-num">3</div>
+        <h3>Stand Out</h3>
+        <p>Enter competitions. Build projects for college applications. Teach others. Choose a career knowing exactly what it feels like.</p>
+        <span class="pathway-course-tag">Advanced Courses · 2026–27</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOOL STRIP -->
+<section class="school-strip" id="schools">
+  <div class="school-strip-inner">
+    <div>
+      <h3>Are you a <span>school in Bangalore</span>?<br>We bring ScrideEd to your campus.</h3>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;">
+      <div class="school-offerings-mini">
+        <span class="offering-tag">Lab Setup</span>
+        <span class="offering-tag">Curriculum Design</span>
+        <span class="offering-tag">In-School Workshops</span>
+        <span class="offering-tag">STEM Days</span>
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <a href="mailto:hello@scrideed.com" class="btn-primary" style="background:var(--electric);">Email for School Partnerships →</a>
+        <a href="https://wa.me/918660552494?text=Hi!%20I%20represent%20a%20school%20in%20Bangalore%20and%20I%27m%20interested%20in%20ScrideEd%20school%20programs." class="btn-secondary" style="color:var(--white);border-color:#334155;">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="section-label">Questions & Answers</div>
+    <h2 class="section-heading">Everything Parents Ask Us</h2>
+    <div class="faq-cols">
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Does my child need any prior experience? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">None at all. Both bootcamps are built for complete beginners. No coding knowledge, no electronics background, no prior tech exposure required. If your teen is curious, that is the only qualification.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does a typical workshop day look like? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">Day 1 covers concepts and foundations — but hands-on from the start. Students begin assembling or coding within the first hour. Day 2 is project build day — students work on their final project and present it by end of day. No passive lectures.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What will my child actually take home? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">Their kit, their built project, and a certificate of completion. More importantly, they take home a genuine understanding of what they built and the confidence to keep going — or the clarity that this path isn't for them.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">My child isn't sure if they like tech — is this still worth it? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">This is exactly who the weekend workshops are designed for. The whole point is to give teens a real, hands-on experience so they can make an informed decision. Many students who "weren't sure" discover a genuine passion. Some discover it's not for them — and that's equally valuable.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What is the batch size? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">We keep batches small — typically 8–15 students — so every student gets individual attention from the instructor. This is intentional: ScrideEd is not a mass-classroom experience.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What is the refund policy? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">Full refund if you cancel more than 48 hours before the workshop start time. 50% refund between 24–48 hours before. No refund within 24 hours, but we offer priority registration for the next available batch at no extra cost.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can parents attend the workshop? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">Parents are welcome to drop in and observe — especially during the Day 2 project demo. We find students perform better independently, so we recommend parents stay outside the workshop room during sessions, but you're always welcome to check in.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is the Arduino/robotics kit kept by the student? <span class="faq-toggle">+</span></div>
+          <div class="faq-a">Yes — the kit is included in the course fee and goes home with the student. We want them to keep building after the workshop, not stop when they leave the room.</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="faq-sidebar">
+          <h3>Still have questions?</h3>
+          <p>We're a small team and we read every message. WhatsApp is the fastest way to reach us — typically reply within a few hours on weekdays.</p>
+          <a href="https://wa.me/918660552494?text=Hi!%20I%20have%20a%20question%20about%20ScrideEd%20workshops." class="faq-sidebar-item">
+            <div class="faq-sidebar-icon">💬</div>
+            <div class="faq-sidebar-text">
+              <strong>WhatsApp Us</strong>
+              <span>+91 8660552494 · Mon–Sat, 10am–8pm</span>
+            </div>
+          </a>
+          <a href="mailto:hello@scrideed.com" class="faq-sidebar-item">
+            <div class="faq-sidebar-icon">✉️</div>
+            <div class="faq-sidebar-text">
+              <strong>Email Us</strong>
+              <span>hello@scrideed.com</span>
+            </div>
+          </a>
+          <a href="/about.html" class="faq-sidebar-item">
+            <div class="faq-sidebar-icon">👤</div>
+            <div class="faq-sidebar-text">
+              <strong>Meet the Instructor</strong>
+              <span>Learn about Asif & the team</span>
+            </div>
+          </a>
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid #1E293B;">
+            <div style="font-family:'Space Mono',monospace;font-size:0.65rem;color:#334155;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">Upcoming Batches</div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <div style="background:#1E293B;border-radius:6px;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:0.85rem;color:#CBD5E0;">⚡ Arduino Bootcamp</span>
+                <span style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--electric);">July 2026</span>
+              </div>
+              <div style="background:#1E293B;border-radius:6px;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:0.85rem;color:#CBD5E0;">🤖 Robotics Bootcamp</span>
+                <span style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--electric);">August 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="tagline-label">Learn · Dream · Build</div>
+  <h2>Your Teen's First Build Is One Weekend Away.</h2>
+  <p>No experience needed. No long-term commitment. Just two days, one skill, and something real to show for it.</p>
+  <div class="final-btns">
+    <a href="https://forms.gle/LDaKzVf9h2hfmn22A" target="_blank" class="btn-white">⚡ Register for Arduino Bootcamp →</a>
+    <a href="https://wa.me/918660552494" class="btn-outline-white">💬 WhatsApp to Ask First</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Scride Smart Solutions Private Limited · ScrideEd · Frazer Town, Bangalore</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/refund-policy/">Refunds</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918660552494" class="whatsapp-float" title="WhatsApp ScrideEd">💬</a>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Filter tabs (smooth scroll to section)
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', e => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  // Notify me handler
+  function handleNotify() {
+    const email = document.getElementById('notify-email').value;
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    // Replace this with your actual form submission / Mailchimp / Google Forms link
+    window.open('https://wa.me/918660552494?text=Hi!%20Please%20notify%20me%20when%20Python%20for%20Teens%20launches.%20My%20email%3A%20' + encodeURIComponent(email), '_blank');
+  }
+</script>
+</body>
+</html>
