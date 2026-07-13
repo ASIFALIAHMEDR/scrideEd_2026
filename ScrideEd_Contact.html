@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact ScrideEd — STEM Workshops for Teens in Bangalore</title>
+<meta name="description" content="Get in touch with ScrideEd. Located in Frazer Town, Bangalore. Call, WhatsApp, or email us about our robotics and STEM workshops for teens aged 13–18. Mon–Sat, 10am–8pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ScrideEd",
+  "alternateName": "Scride Smart Solutions Private Limited",
+  "url": "https://scrideed.com",
+  "logo": "https://scrideed.com/images/scrideed-logo.png",
+  "image": "https://scrideed.com/images/workshop-photo.jpg",
+  "description": "Hands-on STEM and robotics workshops for teenagers aged 13-18 in Bangalore. Arduino, Robotics, IoT and coding courses.",
+  "telephone": "+918660552494",
+  "email": "hello@scrideed.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "#39, B-Type Quarters, Robertson Road",
+    "addressLocality": "Frazer Town",
+    "addressRegion": "Karnataka",
+    "postalCode": "560005",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.9784,
+    "longitude": 77.6099
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/scride.ed",
+    "https://www.linkedin.com/in/asif-ali-ahmed-r-01539817a"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --ink:      #0D0D0D;
+    --paper:    #F7F6F2;
+    --electric: #D8AF13;
+    --elec-dim: rgba(216,175,19,0.07);
+    --elec-mid: rgba(216,175,19,0.19);
+    --wire:     #1A1A2E;
+    --steel:    #4A5568;
+    --grid:     #E8E6DF;
+    --white:    #FFFFFF;
+    --green:    #00C896;
+    --red:      #EF4444;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--wire);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    color: var(--white); font-size: 1.2rem;
+    letter-spacing: -0.02em; text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .nav-logo span { color: var(--electric); }
+  .nav-tagline { font-size: 0.55rem; color: #475569; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: #CBD5E0; text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--electric); }
+  .nav-cta { background: var(--electric); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 600 !important; }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative; z-index: 1;
+    background: var(--wire);
+    padding: 4.5rem 5% 3.5rem;
+    overflow: hidden;
+  }
+
+  .page-hero::after {
+    content: '';
+    position: absolute; right: -60px; top: -80px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(216,175,19,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner { max-width: 1100px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; color: #475569;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb a { color: var(--electric); text-decoration: none; }
+
+  .page-hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.03em; line-height: 1.15;
+    max-width: 640px; margin-bottom: 1rem;
+  }
+
+  .page-hero h1 em { font-style: normal; color: var(--electric); }
+
+  .page-hero p {
+    font-size: 1.05rem; color: #94A3B8;
+    max-width: 500px; line-height: 1.7;
+  }
+
+  /* MAIN LAYOUT */
+  .contact-wrap {
+    position: relative; z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 5% 5rem;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* LEFT: contact channels + map */
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--electric);
+    margin-bottom: 0.75rem;
+  }
+
+  h2.section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700; letter-spacing: -0.03em;
+    color: var(--ink); line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-channels {
+    display: flex; flex-direction: column; gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .channel-card {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border: 1.5px solid var(--grid);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .channel-card:hover {
+    border-color: var(--electric);
+    transform: translateX(4px);
+  }
+
+  .channel-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  .ch-wa   { background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.25); }
+  .ch-call { background: var(--elec-dim); border: 1px solid var(--elec-mid); }
+  .ch-mail { background: #EFF6FF; border: 1px solid #BFDBFE; }
+  .ch-visit { background: #F5F3FF; border: 1px solid #DDD6FE; }
+
+  .channel-info { flex: 1; }
+
+  .channel-info strong {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.15rem;
+  }
+
+  .channel-info span { font-size: 0.825rem; color: var(--steel); }
+
+  .channel-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem; border-radius: 100px;
+    background: var(--green); color: var(--ink);
+    font-weight: 700; white-space: nowrap;
+  }
+
+  .channel-badge.slow { background: #E2E8F0; color: var(--steel); }
+
+  /* Hours card */
+  .hours-card {
+    background: var(--wire);
+    border-radius: 10px; padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hours-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--white); margin-bottom: 1rem;
+  }
+
+  .hours-row {
+    display: flex; justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #1E293B;
+    font-size: 0.85rem;
+  }
+
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .day { color: #64748B; }
+  .hours-row .time { color: var(--white); font-family: 'Space Mono', monospace; font-size: 0.8rem; }
+  .hours-row .time.closed { color: #334155; }
+
+  .open-now {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.75rem; color: var(--green);
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 0.75rem;
+  }
+
+  .open-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  /* Map placeholder */
+  .map-placeholder {
+    background: var(--wire);
+    border-radius: 10px;
+    border: 1.5px solid #1E293B;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .map-inner {
+    padding: 1.5rem;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .map-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--electric);
+  }
+
+  .map-address {
+    font-size: 0.9rem; color: #CBD5E0;
+    line-height: 1.6;
+  }
+
+  .map-embed {
+    width: 100%; height: 220px;
+    border: none; border-radius: 8px;
+    filter: grayscale(20%) contrast(1.1);
+  }
+
+  .map-directions {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--electric);
+    color: var(--white);
+    padding: 0.6rem 1.25rem; border-radius: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 0.85rem;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: transform 0.15s;
+  }
+
+  .map-directions:hover { transform: translateY(-2px); }
+
+  /* RIGHT: contact form */
+  .form-card {
+    background: var(--white);
+    border: 1px solid var(--grid);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    position: sticky; top: 88px;
+  }
+
+  .form-header {
+    background: var(--wire);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--electric);
+  }
+
+  .form-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.2rem;
+  }
+
+  .form-header p { font-size: 0.8rem; color: #64748B; }
+
+  .form-body { padding: 1.75rem; }
+
+  .field-group { margin-bottom: 1.1rem; }
+
+  label {
+    display: block;
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 0.4rem;
+  }
+
+  label .req { color: var(--electric); margin-left: 2px; }
+  label .opt { color: #94A3B8; font-weight: 400; font-size: 0.75rem; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    background: var(--paper);
+    border: 1.5px solid var(--grid);
+    border-radius: 6px;
+    padding: 0.65rem 0.875rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem; color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--electric);
+    box-shadow: 0 0 0 3px var(--elec-dim);
+    background: var(--white);
+  }
+
+  input.error, select.error { border-color: var(--red); }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A5568' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.5rem; cursor: pointer;
+  }
+
+  textarea { resize: vertical; min-height: 100px; }
+
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+
+  .field-error { display: none; font-size: 0.75rem; color: var(--red); margin-top: 0.3rem; }
+  .field-error.show { display: block; }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--electric); color: var(--white);
+    padding: 0.875rem; border-radius: 6px; border: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; margin-top: 0.5rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(216,175,19,0.21); }
+  .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .form-note {
+    font-size: 0.75rem; color: #94A3B8;
+    text-align: center; margin-top: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* Success state */
+  .success-msg {
+    display: none;
+    text-align: center; padding: 2rem 1rem;
+  }
+
+  .success-msg.show { display: block; }
+
+  .success-msg .s-icon {
+    font-size: 2.5rem; margin-bottom: 1rem;
+  }
+
+  .success-msg h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.5rem;
+  }
+
+  .success-msg p { font-size: 0.875rem; color: var(--steel); line-height: 1.65; }
+
+  /* FAQ strip */
+  .faq-strip {
+    position: relative; z-index: 1;
+    background: var(--white);
+    border-top: 1px solid var(--grid);
+    padding: 4rem 5%;
+  }
+
+  .faq-strip-inner { max-width: 1100px; margin: 0 auto; }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .faq-card {
+    background: var(--paper);
+    border: 1px solid var(--grid);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .faq-card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.5rem;
+  }
+
+  .faq-card p { font-size: 0.875rem; color: var(--steel); line-height: 1.65; }
+  .faq-card a { color: var(--electric); text-decoration: none; }
+
+  footer {
+    position: relative; z-index: 1;
+    background: var(--ink); padding: 1.5rem 5%;
+  }
+
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-bottom p { font-size: 0.8rem; color: #2D3748; }
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { font-size: 0.8rem; color: #2D3748; text-decoration: none; }
+  .footer-legal a:hover { color: var(--electric); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: #25D366; color: white;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none; z-index: 200;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+    .contact-wrap { grid-template-columns: 1fr; }
+    .form-card { position: static; }
+    .field-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <!-- <a href="/" class="nav-logo">Scride<span>Ed</span> <small style="font-size:0.55rem;color:#475569;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;margin-left:0.5rem;">Learn · Dream · Build</small></a> -->
+  <a href="./" class="logo"><img src="./assets/icons/logo-white-rbg.png" alt="Scride Ed" width="222" ></a>
+  <ul class="nav-links">
+    <li><a href="/ScrideEd_About.html">About</a></li>
+    <li><a href="/ScrideEd_Courses.html">Courses</a></li>
+    <li><a href="/ScrideEd_Schools.html">For Schools</a></li>
+    <li><a href="/blog/">Kits</a></li>
+    <li><a href="/ScrideEd_Contact.html" class="nav-cta">Get Started →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a> / Contact</div>
+    <h1>We're Here Mon–Sat,<br><em>10 AM – 8 PM.</em></h1>
+    <p>Got a question about a workshop, school partnership, or just want to know if ScrideEd is right for your teen? Reach out — we read every message personally.</p>
+  </div>
+</section>
+
+<div class="contact-wrap">
+
+  <!-- LEFT -->
+  <div>
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-heading">Choose How You'd Like to Reach Us</h2>
+
+    <div class="contact-channels">
+      <a href="https://wa.me/918660552494?text=Hi%20ScrideEd!%20I%20have%20a%20question%20about%20your%20workshops." class="channel-card">
+        <div class="channel-icon ch-wa">💬</div>
+        <div class="channel-info">
+          <strong>WhatsApp</strong>
+          <span>+91 8660552494 — fastest response</span>
+        </div>
+        <span class="channel-badge">Fastest</span>
+      </a>
+
+      <a href="tel:+918660552494" class="channel-card">
+        <div class="channel-icon ch-call">📞</div>
+        <div class="channel-info">
+          <strong>Call Us</strong>
+          <span>+91 8660552494 — Mon–Sat, 10am–8pm</span>
+        </div>
+        <span class="channel-badge slow">Call</span>
+      </a>
+
+      <a href="mailto:hello@scrideed.com" class="channel-card">
+        <div class="channel-icon ch-mail">✉️</div>
+        <div class="channel-info">
+          <strong>Email</strong>
+          <span>hello@scrideed.com — reply within 24hrs</span>
+        </div>
+        <span class="channel-badge slow">24hrs</span>
+      </a>
+
+      <a href="https://maps.google.com/?q=Robertson+Road+Frazer+Town+Bangalore" target="_blank" class="channel-card">
+        <div class="channel-icon ch-visit">📍</div>
+        <div class="channel-info">
+          <strong>Visit Us</strong>
+          <span>#39, B-Type Quarters, Robertson Road, Frazer Town, Bangalore — 560005</span>
+        </div>
+        <span class="channel-badge slow">In-person</span>
+      </a>
+    </div>
+
+    <!-- Hours -->
+    <div class="hours-card">
+      <div class="open-now" id="open-status">
+        <div class="open-dot"></div>
+        <span id="open-text">Checking hours...</span>
+      </div>
+      <h3>Support Hours</h3>
+      <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">10:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span class="day">Saturday</span><span class="time">10:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span class="day">Sunday</span><span class="time closed">Closed</span></div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-placeholder">
+      <div class="map-inner">
+        <div class="map-label">📍 Our Location</div>
+        <div class="map-address">
+          <strong style="color:#CBD5E0;font-family:'Space Grotesk',sans-serif;">#39, B-Type Quarters</strong><br>
+          Robertson Road, Frazer Town<br>
+          Bangalore, Karnataka — 560005
+        </div>
+        <!--
+          EMBED MAP INSTRUCTIONS:
+          1. Go to maps.google.com
+          2. Search "Robertson Road Frazer Town Bangalore"
+          3. Click Share → Embed a map
+          4. Copy the <iframe> src URL
+          5. Replace the src below
+        -->
+        <iframe
+          class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6!2d77.6099!3d12.9784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae168d3b02af5d%3A0x1234!2sRobertson+Road%2C+Frazer+Town%2C+Bengaluru!5e0!3m2!1sen!2sin!4v1234567890"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="ScrideEd location — Frazer Town, Bangalore">
+        </iframe>
+        <a href="https://maps.google.com/?q=Robertson+Road+Frazer+Town+Bangalore" target="_blank" class="map-directions">
+          📍 Get Directions →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Contact Form -->
+  <div class="form-card">
+    <div class="form-header">
+      <h2>Send Us a Message</h2>
+      <p>We'll get back to you within a few hours on working days.</p>
+    </div>
+    <div class="form-body">
+
+      <div id="contact-form">
+        <div class="field-row">
+          <div class="field-group">
+            <label for="c-name">Your name <span class="req">*</span></label>
+            <input type="text" id="c-name" placeholder="Priya Sharma">
+            <span class="field-error" id="ce-name">Please enter your name.</span>
+          </div>
+          <div class="field-group">
+            <label for="c-phone">WhatsApp number <span class="req">*</span></label>
+            <input type="tel" id="c-phone" placeholder="10-digit number" maxlength="10">
+            <span class="field-error" id="ce-phone">Enter a valid 10-digit number.</span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="c-email">Email address <span class="req">*</span></label>
+          <input type="email" id="c-email" placeholder="yourname@email.com">
+          <span class="field-error" id="ce-email">Please enter a valid email.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="c-topic">I'm enquiring about <span class="req">*</span></label>
+          <select id="c-topic">
+            <option value="">Select a topic</option>
+            <option>Arduino Bootcamp — July 2026</option>
+            <option>Robotics Bootcamp — August 2026</option>
+            <option>Python for Teens (coming soon)</option>
+            <option>School Partnership / Lab Setup</option>
+            <option>Pricing & Fees</option>
+            <option>Location & Directions</option>
+            <option>Something Else</option>
+          </select>
+          <span class="field-error" id="ce-topic">Please select a topic.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="c-message">Your message <span class="req">*</span></label>
+          <textarea id="c-message" placeholder="Tell us what you'd like to know..."></textarea>
+          <span class="field-error" id="ce-message">Please write a message.</span>
+        </div>
+
+        <button class="btn-submit" onclick="sendContactForm()" id="c-submit-btn">
+          <span id="c-submit-text">Send Message →</span>
+        </button>
+
+        <p class="form-note">
+          Or reach us directly:<br>
+          <a href="https://wa.me/918660552494" style="color:var(--electric);">💬 WhatsApp</a> ·
+          <a href="mailto:hello@scrideed.com" style="color:var(--electric);">hello@scrideed.com</a>
+        </p>
+      </div>
+
+      <div class="success-msg" id="c-success">
+        <div class="s-icon">✅</div>
+        <h3>Message Sent!</h3>
+        <p>Thanks for reaching out. We'll get back to you within a few hours on WhatsApp or email.<br><br>
+        If it's urgent, <a href="https://wa.me/918660552494" style="color:var(--electric);">WhatsApp us directly</a> — it's the fastest way to reach us.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FAQ STRIP -->
+<section class="faq-strip">
+  <div class="faq-strip-inner">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-heading">Quick Answers</h2>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <h4>How quickly do you respond?</h4>
+        <p>WhatsApp is the fastest — typically within a few hours on Mon–Sat. Email replies within 24 hours. We don't use bots; every message is read by a real person.</p>
+      </div>
+      <div class="faq-card">
+        <h4>Can I visit your location?</h4>
+        <p>Yes — we're at #39, B-Type Quarters, Robertson Road, Frazer Town. Please WhatsApp us first to confirm we're available before visiting.</p>
+      </div>
+      <div class="faq-card">
+        <h4>How do I register for a workshop?</h4>
+        <p>Visit our <a href="/register.html">registration page</a> and fill the form. We'll WhatsApp you within a few hours to confirm your seat and share payment details.</p>
+      </div>
+      <div class="faq-card">
+        <h4>I'm a school — who should I contact?</h4>
+        <p>Email us at <a href="mailto:hello@scrideed.com">hello@scrideed.com</a> with your school name and what you're looking for. We respond to school enquiries within 24 hours.</p>
+      </div>
+      <div class="faq-card">
+        <h4>Do you offer online workshops?</h4>
+        <p>Our current focus is in-person, hands-on workshops in Bangalore. The physical experience is central to what we do. Online options may be explored in future.</p>
+      </div>
+      <div class="faq-card">
+        <h4>Is ScrideEd a registered company?</h4>
+        <p>Yes. ScrideEd is a brand under <strong>Scride Smart Solutions Private Limited</strong>, a registered company in Bangalore, Karnataka, India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Scride Smart Solutions Private Limited · ScrideEd · Frazer Town, Bangalore</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/refund-policy/">Refunds</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918660552494" class="whatsapp-float">💬</a>
+
+<script>
+  /* Live open/closed status */
+  (function() {
+    const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    const day = now.getDay(); // 0=Sun
+    const hour = now.getHours();
+    const isOpen = day >= 1 && day <= 6 && hour >= 10 && hour < 20;
+    const el = document.getElementById('open-text');
+    const dot = document.querySelector('.open-dot');
+    if (isOpen) {
+      el.textContent = 'We\'re open right now';
+      el.style.color = 'var(--green)';
+    } else {
+      el.textContent = day === 0 ? 'Closed today (Sunday)' : 'Currently offline — back at 10 AM';
+      el.style.color = '#64748B';
+      dot.style.background = '#64748B';
+      dot.style.animation = 'none';
+    }
+  })();
+
+  /* Contact form validation + submit */
+  function sendContactForm() {
+    let valid = true;
+
+    const name = document.getElementById('c-name').value.trim();
+    if (!name) { show('ce-name'); err('c-name'); valid = false; } else { hide('ce-name'); ok('c-name'); }
+
+    const phone = document.getElementById('c-phone').value.trim();
+    if (!phone || phone.length !== 10 || !/^\d+$/.test(phone)) { show('ce-phone'); err('c-phone'); valid = false; } else { hide('ce-phone'); ok('c-phone'); }
+
+    const email = document.getElementById('c-email').value.trim();
+    if (!email || !email.includes('@')) { show('ce-email'); err('c-email'); valid = false; } else { hide('ce-email'); ok('c-email'); }
+
+    const topic = document.getElementById('c-topic').value;
+    if (!topic) { show('ce-topic'); err('c-topic'); valid = false; } else { hide('ce-topic'); ok('c-topic'); }
+
+    const msg = document.getElementById('c-message').value.trim();
+    if (!msg) { show('ce-message'); err('c-message'); valid = false; } else { hide('ce-message'); ok('c-message'); }
+
+    if (!valid) return;
+
+    const btn = document.getElementById('c-submit-btn');
+    btn.disabled = true;
+    document.getElementById('c-submit-text').textContent = 'Sending...';
+
+    /*
+    ── CONNECT TO WEB3FORMS (free):
+    1. Get your access key from https://web3forms.com
+    2. Uncomment and fill in the fetch block below
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'YOUR_WEB3FORMS_ACCESS_KEY',
+        subject: 'ScrideEd Contact Form — ' + topic,
+        from_name: name,
+        email: email,
+        phone: phone,
+        topic: topic,
+        message: msg
+      })
+    })
+    .then(r => r.json())
+    .then(d => { if (d.success) showSuccess(); else { btn.disabled = false; document.getElementById('c-submit-text').textContent = 'Send Message →'; }})
+    .catch(() => { btn.disabled = false; document.getElementById('c-submit-text').textContent = 'Send Message →'; });
+    */
+
+    setTimeout(showSuccess, 1000);
+  }
+
+  function showSuccess() {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('c-success').classList.add('show');
+  }
+
+  function show(id) { document.getElementById(id).classList.add('show'); }
+  function hide(id) { document.getElementById(id).classList.remove('show'); }
+  function err(id)  { document.getElementById(id).classList.add('error'); }
+  function ok(id)   { document.getElementById(id).classList.remove('error'); }
+</script>
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal — Privacy Policy, Terms & Refund Policy | ScrideEd</title>
+<meta name="description" content="ScrideEd's Privacy Policy, Terms & Conditions, and Refund Policy. Operated by Scride Smart Solutions Private Limited, Frazer Town, Bangalore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #0D0D0D;
+    --paper:    #F7F6F2;
+    --gold:     #D8AF13;
+    --gold-dim: rgba(216,175,19,0.08);
+    --wire:     #1A1A2E;
+    --steel:    #4A5568;
+    --grid:     #E8E6DF;
+    --white:    #FFFFFF;
+    --green:    #00C896;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--wire);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    color: var(--white); font-size: 1.2rem;
+    letter-spacing: -0.02em; text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .nav-logo span { color: var(--gold); }
+  .nav-tagline { font-size: 0.55rem; color: #475569; letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: #CBD5E0; text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: var(--wire);
+    padding: 3.5rem 5% 3rem;
+    border-bottom: 1px solid #1E293B;
+    position: relative; z-index: 1;
+  }
+
+  .header-inner { max-width: 860px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem; color: #475569;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumb a { color: var(--gold); text-decoration: none; }
+
+  .page-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.03em; margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    font-size: 0.875rem; color: #64748B;
+  }
+
+  /* TAB BAR */
+  .tab-bar {
+    position: sticky; top: 64px; z-index: 90;
+    background: var(--white);
+    border-bottom: 2px solid var(--grid);
+    padding: 0 5%;
+  }
+
+  .tab-bar-inner {
+    max-width: 860px; margin: 0 auto;
+    display: flex; gap: 0;
+  }
+
+  .tab {
+    padding: 1rem 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.875rem; font-weight: 600;
+    color: var(--steel); cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    background: none; border-top: none;
+    border-left: none; border-right: none;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+
+  .tab:hover { color: var(--gold); }
+  .tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* CONTENT */
+  .content-wrap {
+    max-width: 860px; margin: 0 auto;
+    padding: 3.5rem 5% 5rem;
+    position: relative; z-index: 1;
+  }
+
+  .legal-panel { display: none; }
+  .legal-panel.active { display: block; }
+
+  /* Updated badge */
+  .updated-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--gold-dim);
+    border: 1px solid rgba(216,175,19,0.2);
+    border-radius: 100px;
+    padding: 0.3rem 0.875rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.08em;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Section headings */
+  .legal-panel h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .panel-intro {
+    font-size: 1rem; color: var(--steel);
+    line-height: 1.75; margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--grid);
+  }
+
+  /* Each clause block */
+  .clause {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--grid);
+  }
+
+  .clause:last-child { border-bottom: none; }
+
+  .clause-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .clause h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.75rem;
+  }
+
+  .clause p {
+    font-size: 0.9rem; color: var(--steel);
+    line-height: 1.75; margin-bottom: 0.75rem;
+  }
+
+  .clause p:last-child { margin-bottom: 0; }
+
+  .clause ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.4rem;
+    margin: 0.5rem 0;
+  }
+
+  .clause ul li {
+    font-size: 0.9rem; color: var(--steel);
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    line-height: 1.6;
+  }
+
+  .clause ul li::before {
+    content: '→';
+    color: var(--gold); font-size: 0.75rem;
+    font-weight: 700; flex-shrink: 0; margin-top: 3px;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: var(--gold-dim);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-size: 0.875rem; color: var(--ink);
+    line-height: 1.65;
+  }
+
+  .highlight-box strong { color: var(--ink); }
+
+  /* Refund table */
+  .refund-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.875rem; margin: 1rem 0;
+    border: 1px solid var(--grid);
+    border-radius: 8px; overflow: hidden;
+  }
+
+  .refund-table thead tr { background: var(--wire); }
+
+  .refund-table thead th {
+    padding: 0.875rem 1.25rem;
+    text-align: left; color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.825rem; font-weight: 600;
+  }
+
+  .refund-table thead th:last-child { color: var(--gold); }
+
+  .refund-table tbody tr { border-bottom: 1px solid var(--grid); }
+  .refund-table tbody tr:last-child { border-bottom: none; }
+  .refund-table tbody tr:hover { background: var(--paper); }
+
+  .refund-table tbody td {
+    padding: 0.875rem 1.25rem;
+    color: var(--steel); vertical-align: top;
+  }
+
+  .refund-table tbody td:first-child { font-weight: 500; color: var(--ink); }
+
+  .badge-full  { color: var(--green); font-weight: 700; }
+  .badge-half  { color: #F59E0B; font-weight: 700; }
+  .badge-none  { color: #94A3B8; font-weight: 700; }
+
+  /* Contact block */
+  .contact-block {
+    background: var(--wire);
+    border-radius: 8px; padding: 1.5rem 2rem;
+    margin-top: 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+  }
+
+  .contact-block p {
+    font-size: 0.875rem; color: #64748B; line-height: 1.6;
+  }
+
+  .contact-block p strong { color: var(--white); display: block; margin-bottom: 0.25rem; }
+
+  .contact-block a {
+    background: var(--gold); color: var(--ink);
+    padding: 0.65rem 1.25rem; border-radius: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 0.85rem;
+    text-decoration: none; white-space: nowrap;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+  }
+
+  .contact-block a:hover { opacity: 0.85; }
+
+  /* Footer */
+  footer {
+    background: var(--ink); padding: 1.5rem 5%;
+    position: relative; z-index: 1;
+  }
+
+  .footer-bottom {
+    max-width: 860px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-bottom p { font-size: 0.8rem; color: #2D3748; }
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { font-size: 0.8rem; color: #2D3748; text-decoration: none; }
+  .footer-legal a:hover { color: var(--gold); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: #25D366; color: white;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none; z-index: 200;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  @media (max-width: 680px) {
+    .nav-links { display: none; }
+    .tab { padding: 0.875rem 1rem; font-size: 0.8rem; }
+    .contact-block { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    Scride<span>Ed</span>
+    <span class="nav-tagline">Learn · Dream · Build</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/courses.html">Courses</a></li>
+    <li><a href="/schools/">For Schools</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="header-inner">
+    <div class="breadcrumb"><a href="/">Home</a> / Legal</div>
+    <h1>Legal Documents</h1>
+    <p>Scride Smart Solutions Private Limited · Frazer Town, Bangalore · hello@scrideed.com</p>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab active" onclick="switchTab('privacy', this)">Privacy Policy</button>
+    <button class="tab" onclick="switchTab('terms', this)">Terms & Conditions</button>
+    <button class="tab" onclick="switchTab('refund', this)">Refund Policy</button>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <!-- ── PRIVACY POLICY ── -->
+  <div class="legal-panel active" id="panel-privacy">
+    <div class="updated-badge">Last updated — June 2026</div>
+    <h2>Privacy Policy</h2>
+    <p class="panel-intro">This policy explains what personal information ScrideEd collects, how we use it, and your rights. We keep it simple because we believe you deserve to understand it.</p>
+
+    <div class="clause">
+      <div class="clause-num">01</div>
+      <h3>Who We Are</h3>
+      <p>ScrideEd is a brand operated by <strong>Scride Smart Solutions Private Limited</strong>, registered in Bangalore, Karnataka, India. Our website is <a href="https://scrideed.com" style="color:var(--gold);">scrideed.com</a>. For any privacy-related matter, contact us at hello@scrideed.com or +91 8660552494.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">02</div>
+      <h3>What We Collect</h3>
+      <p>We only collect information you provide directly to us:</p>
+      <ul>
+        <li>Student details — name, age, class, school name</li>
+        <li>Parent / guardian details — name, phone number, email, area</li>
+        <li>Workshop registration and payment information</li>
+        <li>Messages and enquiries submitted via our website or WhatsApp</li>
+        <li>Basic analytics data via Google Analytics (page visits, device type — no personal identifiers)</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">03</div>
+      <h3>How We Use Your Information</h3>
+      <ul>
+        <li>To confirm workshop registrations and send course-related communication</li>
+        <li>To process payments and issue receipts</li>
+        <li>To respond to your enquiries via WhatsApp or email</li>
+        <li>To send updates about new workshops and courses (you can opt out at any time)</li>
+        <li>To improve our services using anonymised usage data</li>
+      </ul>
+      <div class="highlight-box">We do not use your data for advertising, and we do not sell your personal information to any third party — ever.</div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">04</div>
+      <h3>Data Sharing</h3>
+      <p>We do not sell or rent your personal data. We may share data only with:</p>
+      <ul>
+        <li>Payment processors (UPI / Razorpay) to complete transactions</li>
+        <li>Communication tools (WhatsApp Business, Google Workspace) necessary to operate our services</li>
+        <li>Legal authorities if required by applicable Indian law</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">05</div>
+      <h3>Photos & Videos</h3>
+      <p>We only photograph or video students during workshops when explicit written permission has been granted by a parent or guardian via our registration form. If you did not grant permission, your child will not be photographed. You may withdraw permission at any time by emailing hello@scrideed.com.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">06</div>
+      <h3>Data Retention</h3>
+      <p>We retain personal data for as long as necessary to fulfil the purpose it was collected for, or as required by Indian law. Registration records are kept for a minimum of 3 years for accounting purposes. You may request deletion of your data at any time (subject to legal retention requirements).</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">07</div>
+      <h3>Your Rights</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate data</li>
+        <li>Request deletion of your data (where legally permissible)</li>
+        <li>Opt out of marketing communications at any time</li>
+      </ul>
+      <p>To exercise any of these rights, email hello@scrideed.com. We will respond within 30 days.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">08</div>
+      <h3>Cookies</h3>
+      <p>Our website uses basic cookies for analytics (Google Analytics) and functionality. These do not identify you personally. You can disable cookies in your browser settings at any time without affecting your ability to use the site.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">09</div>
+      <h3>Security</h3>
+      <p>We take reasonable technical and organisational measures to protect your data. However, no internet transmission is 100% secure. If you believe your data has been compromised, contact us immediately at hello@scrideed.com.</p>
+    </div>
+
+    <div class="contact-block">
+      <p><strong>Privacy questions?</strong>Email us or WhatsApp us — we read every message personally.</p>
+      <a href="mailto:hello@scrideed.com">Email hello@scrideed.com →</a>
+    </div>
+  </div>
+
+  <!-- ── TERMS & CONDITIONS ── -->
+  <div class="legal-panel" id="panel-terms">
+    <div class="updated-badge">Last updated — June 2026</div>
+    <h2>Terms & Conditions</h2>
+    <p class="panel-intro">By using scrideed.com or registering for any ScrideEd program, you agree to these terms. These terms apply to students, parents, guardians, and schools.</p>
+
+    <div class="clause">
+      <div class="clause-num">01</div>
+      <h3>About ScrideEd</h3>
+      <p>ScrideEd is a brand operated by <strong>Scride Smart Solutions Private Limited</strong>, a company registered in Bangalore, Karnataka, India. These terms govern your use of our website and participation in our programs.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">02</div>
+      <h3>Eligibility</h3>
+      <p>Our student programs are designed for individuals aged 13–18. Students under 18 must have a parent or guardian complete the registration and provide consent. By registering, you confirm that the information provided is accurate.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">03</div>
+      <h3>Registrations & Seat Confirmation</h3>
+      <ul>
+        <li>Submitting a registration form does not guarantee a seat</li>
+        <li>Seats are confirmed only upon receipt of full payment</li>
+        <li>Seats are allocated on a first-paid, first-confirmed basis</li>
+        <li>We will notify you via WhatsApp to confirm your seat and share payment details within a few hours of registration</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">04</div>
+      <h3>Payments</h3>
+      <p>Payment is accepted via UPI or bank transfer to Scride Smart Solutions Private Limited. A receipt will be issued upon confirmation. ScrideEd reserves the right to update pricing for future batches. Registered participants are not affected by price changes after their seat is confirmed.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">05</div>
+      <h3>Student Conduct</h3>
+      <p>All students are expected to treat instructors, fellow participants, and equipment with respect. ScrideEd reserves the right to remove any participant who disrupts the learning environment, damages equipment, or behaves in a manner inconsistent with our values. No refund will be issued in such cases.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">06</div>
+      <h3>Equipment & Kits</h3>
+      <p>Where kits are included in the course fee, they become the property of the student upon completion of the workshop. Students and parents are responsible for equipment during the workshop. Intentional damage to ScrideEd or venue equipment may result in a charge for replacement costs.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">07</div>
+      <h3>Program Changes</h3>
+      <p>ScrideEd reserves the right to reschedule or modify workshop content due to circumstances beyond our control (instructor illness, venue issues, natural events, etc.). In such cases, registered participants will be offered a rescheduled date or a full refund. We will provide as much advance notice as possible.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">08</div>
+      <h3>Intellectual Property</h3>
+      <p>All course material, curriculum, session plans, and content developed by ScrideEd is the intellectual property of Scride Smart Solutions Private Limited. Students may use knowledge gained for personal and educational purposes. Reproduction or redistribution of ScrideEd materials for commercial purposes is not permitted without written consent.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">09</div>
+      <h3>Liability</h3>
+      <p>ScrideEd takes all reasonable precautions to ensure a safe learning environment. However, ScrideEd is not liable for any personal injury, loss, or damage arising from participation in workshops beyond what is required by applicable Indian law. Parents and guardians acknowledge that hands-on electronics and robotics activities carry inherent minor risks and that appropriate supervision is provided at all times.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">10</div>
+      <h3>Governing Law</h3>
+      <p>These terms are governed by the laws of India. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Bangalore, Karnataka.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">11</div>
+      <h3>Changes to These Terms</h3>
+      <p>We may update these terms from time to time. The latest version will always be published at scrideed.com/terms/. Continued use of our services after an update constitutes acceptance of the revised terms.</p>
+    </div>
+
+    <div class="contact-block">
+      <p><strong>Questions about these terms?</strong>We're happy to clarify anything before you register.</p>
+      <a href="https://wa.me/918660552494?text=Hi!%20I%20have%20a%20question%20about%20ScrideEd%27s%20terms%20and%20conditions.">WhatsApp Us →</a>
+    </div>
+  </div>
+
+  <!-- ── REFUND POLICY ── -->
+  <div class="legal-panel" id="panel-refund">
+    <div class="updated-badge">Last updated — June 2026</div>
+    <h2>Refund Policy</h2>
+    <p class="panel-intro">We want every family to feel safe registering with us. Our refund policy is straightforward — no confusing clauses, no chasing us for what you're owed.</p>
+
+    <div class="clause">
+      <div class="clause-num">01</div>
+      <h3>Workshop & Course Registrations</h3>
+      <table class="refund-table">
+        <thead>
+          <tr>
+            <th>When you cancel</th>
+            <th>Refund</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>More than 48 hours before the workshop</td>
+            <td class="badge-full">100% refund</td>
+          </tr>
+          <tr>
+            <td>Between 24 and 48 hours before the workshop</td>
+            <td class="badge-half">50% refund</td>
+          </tr>
+          <tr>
+            <td>Less than 24 hours before, or no-show</td>
+            <td class="badge-none">No refund*</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="highlight-box">*If you miss a workshop due to a genuine emergency, contact us. We will offer priority registration for the next available batch at no additional cost — we're human about it.</div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">02</div>
+      <h3>Kit Purchases</h3>
+      <ul>
+        <li>Kits may be returned within 7 days of delivery if unused and in original, undamaged packaging</li>
+        <li>Opened or used kits are not eligible for return</li>
+        <li>Return shipping costs are the responsibility of the buyer</li>
+        <li>Refunds for eligible kit returns are processed within 7 working days</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">03</div>
+      <h3>If ScrideEd Cancels or Reschedules</h3>
+      <p>If we cancel or significantly reschedule a workshop for any reason, you will receive:</p>
+      <ul>
+        <li>A <strong>100% refund</strong>, or</li>
+        <li>Priority registration for the next available batch — your choice</li>
+      </ul>
+      <p>We will notify you via WhatsApp as early as possible if this situation arises.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">04</div>
+      <h3>School Engagements</h3>
+      <p>Refund terms for school lab setup, curriculum, and teacher training engagements are governed by the specific agreement signed with the school prior to engagement. Please refer to your school's service agreement for details.</p>
+    </div>
+
+    <div class="clause">
+      <div class="clause-num">05</div>
+      <h3>How to Request a Refund</h3>
+      <p>To request a refund, contact us before your workshop date:</p>
+      <ul>
+        <li>WhatsApp: +91 8660552494</li>
+        <li>Email: hello@scrideed.com</li>
+      </ul>
+      <p>Include your full name, registered phone number, and workshop name. We process eligible refunds within 5–7 working days to the original payment method.</p>
+    </div>
+
+    <div class="contact-block">
+      <p><strong>Need a refund or have a question?</strong>Message us directly — we sort it quickly.</p>
+      <a href="https://wa.me/918660552494?text=Hi!%20I%20need%20to%20request%20a%20refund%20for%20a%20ScrideEd%20workshop.">WhatsApp Us →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Scride Smart Solutions Private Limited · ScrideEd · Frazer Town, Bangalore</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/refund-policy/">Refunds</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918660552494" class="whatsapp-float">💬</a>
+
+<script>
+  function switchTab(id, el) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.legal-panel').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('panel-' + id).classList.add('active');
+    window.scrollTo({ top: document.querySelector('.tab-bar').offsetTop - 10, behavior: 'smooth' });
+  }
+
+  /* Deep-link support: scrideed.com/legal/#privacy etc */
+  const hash = window.location.hash.replace('#','');
+  if (['privacy','terms','refund'].includes(hash)) {
+    const btn = document.querySelector(`[onclick*="'${hash}'"]`);
+    if (btn) btn.click();
+  }
+</script>
+</body>
+</html>
