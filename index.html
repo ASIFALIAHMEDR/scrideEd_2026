@@ -18,6 +18,11 @@
 <nav>
   <!-- <a href="/" class="nav-logo">Scride<span>Ed</span> <small style="font-size:0.55rem;color:#475569;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;margin-left:0.5rem;">Learn · Dream · Build</small></a> -->
   <a href="./" class="logo"><img src="./assets/icons/logo-white-rbg.png" alt="Scride Ed" width="222" ></a>
+  <!-- Hamburger button -->
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
   <ul class="nav-links">
     <li><a href="/ScrideEd_About.html">About</a></li>
     <li><a href="/ScrideEd_Courses.html">Courses</a></li>
@@ -376,6 +381,20 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+  function toggleMenu() {
+  const nav = document.getElementById('nav-links');
+  const btn = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  });
+});
 </script>
 </body>
 </html>
