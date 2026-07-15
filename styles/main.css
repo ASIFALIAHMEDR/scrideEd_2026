@@ -19,6 +19,8 @@
     color: var(--ink);
     font-size: 16px;
     line-height: 1.6;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   /* Circuit board background texture */

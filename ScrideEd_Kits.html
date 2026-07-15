@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational STEM Kits for Teens | ScrideEd — Bangalore</title>
+<meta name="description" content="Buy ScrideEd's hands-on STEM kits — Arduino, Robotics, Electronics and Raspberry Pi starter kits for students aged 13–18. Delivered across Bangalore. Order via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "ScrideEd Educational STEM Kits",
+  "itemListElement": [
+    { "@type": "Product", "position": 1, "name": "Beginner Arduino Kit", "offers": { "@type": "Offer", "price": "999", "priceCurrency": "INR", "availability": "https://schema.org/InStock" } },
+    { "@type": "Product", "position": 2, "name": "Robotics Explorer Kit", "offers": { "@type": "Offer", "price": "1499", "priceCurrency": "INR", "availability": "https://schema.org/OutOfStock" } },
+    { "@type": "Product", "position": 3, "name": "Electronics Lab Kit", "offers": { "@type": "Offer", "price": "799", "priceCurrency": "INR", "availability": "https://schema.org/OutOfStock" } },
+    { "@type": "Product", "position": 4, "name": "Raspberry Pi Starter Kit", "offers": { "@type": "Offer", "price": "2499", "priceCurrency": "INR", "availability": "https://schema.org/OutOfStock" } }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --ink:       #0D0D0D;
+    --paper:     #F7F6F2;
+    --gold:      #D8AF13;
+    --gold-dim:  rgba(216,175,19,0.08);
+    --gold-mid:  rgba(216,175,19,0.2);
+    --gold-text: rgba(216,175,19,0.9);
+    --wire:      #1A1A2E;
+    --wire-mid:  #1E293B;
+    --steel:     #4A5568;
+    --grid:      #E8E6DF;
+    --white:     #FFFFFF;
+    --green:     #00C896;
+    --red:       #EF4444;
+    --slate:     #64748B;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--wire);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    color: var(--white); font-size: 1.2rem;
+    letter-spacing: -0.02em; text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .nav-logo span { color: var(--gold); }
+  .nav-tagline { font-size: 0.55rem; color: #475569; letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: #CBD5E0; text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--ink) !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 700 !important; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index: 1;
+    background: var(--wire);
+    padding: 4.5rem 5% 3.5rem;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; right: -60px; top: -60px;
+    width: 460px; height: 460px;
+    background: radial-gradient(circle, rgba(216,175,19,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .breadcrumb {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem; color: #475569;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb a { color: var(--gold); text-decoration: none; }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.03em; line-height: 1.15;
+    max-width: 680px; margin-bottom: 1rem;
+  }
+
+  .hero h1 em { font-style: normal; color: var(--gold); }
+
+  .hero p {
+    font-size: 1.05rem; color: #94A3B8;
+    max-width: 540px; line-height: 1.75; margin-bottom: 2rem;
+  }
+
+  /* Trust strip */
+  .trust-strip {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+    padding-top: 2rem; border-top: 1px solid #1E293B;
+  }
+
+  .trust-item {
+    font-size: 0.8rem; color: #64748B;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+
+  .trust-item strong { color: #94A3B8; }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    position: relative; z-index: 1;
+    background: var(--white);
+    border-bottom: 1px solid var(--grid);
+    padding: 0 5%;
+  }
+
+  .filter-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 1rem;
+    padding: 1rem 0; flex-wrap: wrap;
+  }
+
+  .filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+  .ftab {
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500;
+    border: 1.5px solid var(--grid);
+    background: var(--paper); color: var(--steel);
+    cursor: pointer; transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .ftab:hover { border-color: var(--gold); color: var(--gold); }
+  .ftab.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
+
+  .result-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem; color: var(--slate);
+    letter-spacing: 0.06em; white-space: nowrap;
+  }
+
+  /* ── KITS GRID ── */
+  .kits-section {
+    position: relative; z-index: 1;
+    padding: 3.5rem 5%;
+  }
+
+  .kits-inner { max-width: 1100px; margin: 0 auto; }
+
+  .kits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── KIT CARD ── */
+  .kit-card {
+    background: var(--white);
+    border: 1.5px solid var(--grid);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+  }
+
+  .kit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.09);
+    border-color: #CBD5E0;
+  }
+
+  .kit-card.in-stock { border-color: rgba(216,175,19,0.35); }
+  .kit-card.in-stock:hover { border-color: var(--gold); }
+
+  /* Card badge */
+  .kit-badge {
+    position: absolute; top: 1rem; left: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.25rem 0.65rem; border-radius: 100px;
+    z-index: 2;
+  }
+
+  .badge-instock  { background: var(--green); color: var(--ink); }
+  .badge-soldout  { background: #1E293B; color: #64748B; border: 1px solid #334155; }
+  .badge-popular  { background: var(--gold); color: var(--ink); }
+  .badge-new      { background: #3B82F6; color: var(--white); }
+
+  /* Kit image */
+  .kit-img {
+    width: 100%; aspect-ratio: 4/3;
+    overflow: hidden; background: #F0EEE8;
+    position: relative;
+  }
+
+  .kit-img img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    transition: transform 0.35s ease;
+    display: block;
+  }
+
+  .kit-card:hover .kit-img img { transform: scale(1.04); }
+
+  /* Sold out overlay */
+  .kit-card.sold-out .kit-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(26,26,46,0.45);
+  }
+
+  /* Image placeholder (until real images added) */
+  .kit-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+    font-size: 3rem; color: #CBD5E0;
+    background: linear-gradient(135deg, #F0EEE8 0%, #E8E6DF 100%);
+  }
+
+  .kit-img-placeholder span {
+    font-size: 0.75rem; color: #94A3B8;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Kit body */
+  .kit-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .kit-category {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+  }
+
+  .kit-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  .kit-desc {
+    font-size: 0.85rem; color: var(--steel);
+    line-height: 1.6; flex: 1;
+  }
+
+  /* What's inside */
+  .kit-includes {
+    display: flex; flex-wrap: wrap; gap: 0.35rem;
+    margin-top: 0.25rem;
+  }
+
+  .kit-tag {
+    font-size: 0.72rem; color: var(--steel);
+    background: var(--paper); border: 1px solid var(--grid);
+    border-radius: 4px; padding: 0.2rem 0.5rem;
+  }
+
+  /* Projects count */
+  .kit-projects {
+    font-size: 0.78rem; color: var(--slate);
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+
+  .kit-projects strong { color: var(--gold); font-family: 'Space Mono', monospace; }
+
+  /* Kit footer */
+  .kit-footer {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--grid);
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    background: var(--paper);
+  }
+
+  .kit-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.02em;
+  }
+
+  .kit-price .price-note {
+    display: block;
+    font-size: 0.7rem; color: var(--slate);
+    font-weight: 400; font-family: 'Inter', sans-serif;
+    letter-spacing: 0;
+  }
+
+  /* Order button */
+  .btn-order {
+    background: var(--gold); color: var(--ink);
+    padding: 0.6rem 1.25rem; border-radius: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 0.85rem;
+    text-decoration: none; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: none; cursor: pointer;
+  }
+
+  .btn-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(216,175,19,0.35);
+  }
+
+  .btn-soldout {
+    background: #1E293B; color: #475569;
+    padding: 0.6rem 1.25rem; border-radius: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 0.85rem;
+    text-decoration: none; white-space: nowrap;
+    border: 1px solid #334155; cursor: not-allowed;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+
+  .btn-notify {
+    background: transparent; color: var(--gold);
+    padding: 0.6rem 1.25rem; border-radius: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 0.85rem;
+    text-decoration: none; white-space: nowrap;
+    border: 1.5px solid var(--gold);
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-notify:hover { background: var(--gold); color: var(--ink); }
+
+  /* ── HOW TO ORDER ── */
+  .order-section {
+    position: relative; z-index: 1;
+    background: var(--wire);
+    padding: 4rem 5%;
+  }
+
+  .order-inner { max-width: 1100px; margin: 0 auto; }
+
+  .order-inner h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700; color: var(--white);
+    letter-spacing: -0.03em; margin-bottom: 0.5rem;
+  }
+
+  .order-inner > p {
+    font-size: 0.925rem; color: var(--slate);
+    margin-bottom: 2.5rem; max-width: 480px;
+  }
+
+  .order-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: #1E293B;
+    border: 1px solid #1E293B; border-radius: 10px; overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  .order-step {
+    background: var(--wire-mid);
+    padding: 1.75rem 1.5rem;
+    display: flex; flex-direction: column; gap: 0.875rem;
+  }
+
+  .step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--gold); line-height: 1;
+  }
+
+  .order-step h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    color: var(--white);
+  }
+
+  .order-step p { font-size: 0.82rem; color: var(--slate); line-height: 1.6; }
+
+  .order-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-wa {
+    background: #25D366; color: var(--white);
+    padding: 0.875rem 1.75rem; border-radius: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 0.925rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+
+  .btn-email {
+    background: transparent; color: #94A3B8;
+    padding: 0.875rem 1.75rem; border-radius: 6px;
+    border: 1px solid #334155;
+    font-weight: 500; font-size: 0.925rem;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-email:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── BUNDLE SECTION ── */
+  .bundle-section {
+    position: relative; z-index: 1;
+    background: var(--white);
+    padding: 4rem 5%;
+  }
+
+  .bundle-inner { max-width: 1100px; margin: 0 auto; }
+
+  .bundle-inner h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+    font-weight: 700; color: var(--ink);
+    letter-spacing: -0.03em; margin-bottom: 0.5rem;
+  }
+
+  .bundle-inner > p {
+    font-size: 0.925rem; color: var(--steel);
+    margin-bottom: 2rem; max-width: 500px; line-height: 1.7;
+  }
+
+  .bundle-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  }
+
+  .bundle-card {
+    border: 1.5px solid var(--grid);
+    border-radius: 12px; padding: 2rem;
+    background: var(--paper);
+    display: flex; flex-direction: column; gap: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .bundle-card:hover { border-color: var(--gold); }
+  .bundle-card.featured { border-color: var(--gold); background: var(--gold-dim); }
+
+  .bundle-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+  }
+
+  .bundle-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.02em;
+  }
+
+  .bundle-card p { font-size: 0.875rem; color: var(--steel); line-height: 1.65; }
+
+  .bundle-kits {
+    display: flex; flex-direction: column; gap: 0.35rem;
+  }
+
+  .bundle-kit-row {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.84rem; color: var(--steel);
+  }
+
+  .bundle-kit-row::before {
+    content: '✓'; color: var(--green);
+    font-size: 0.7rem; font-weight: 700; flex-shrink: 0;
+  }
+
+  .bundle-price-row {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .bundle-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--ink); letter-spacing: -0.02em;
+  }
+
+  .bundle-original {
+    font-size: 0.9rem; color: #94A3B8;
+    text-decoration: line-through;
+  }
+
+  .bundle-save {
+    font-size: 0.75rem; color: var(--green);
+    font-weight: 700; font-family: 'Space Mono', monospace;
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    position: relative; z-index: 1;
+    background: var(--paper); padding: 4rem 5%;
+  }
+
+  .faq-inner { max-width: 720px; margin: 0 auto; }
+
+  .faq-inner h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+    font-weight: 700; color: var(--ink);
+    letter-spacing: -0.03em; margin-bottom: 2rem;
+  }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .faq-item { border: 1px solid var(--grid); border-radius: 8px; overflow: hidden; }
+
+  .faq-q {
+    padding: 1.1rem 1.4rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.925rem; font-weight: 600;
+    cursor: pointer; background: var(--white);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; user-select: none; transition: background 0.15s;
+  }
+
+  .faq-q:hover { background: var(--paper); }
+
+  .faq-icon {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--gold-dim); border: 1px solid var(--gold-mid);
+    color: var(--gold); font-size: 1rem; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1; transition: background 0.2s;
+  }
+
+  .faq-item.open .faq-icon { background: var(--gold); color: var(--ink); }
+
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.2s;
+    font-size: 0.88rem; color: var(--steel);
+    line-height: 1.75; background: var(--white);
+    padding: 0 1.4rem;
+  }
+
+  .faq-item.open .faq-a { max-height: 200px; padding: 1rem 1.4rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 1;
+    background: var(--ink); padding: 1.5rem 5%;
+  }
+
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-bottom p { font-size: 0.8rem; color: #2D3748; }
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { font-size: 0.8rem; color: #2D3748; text-decoration: none; }
+  .footer-legal a:hover { color: var(--gold); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: #25D366; color: white;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; text-decoration: none; z-index: 200;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+    .order-steps { grid-template-columns: 1fr 1fr; }
+    .bundle-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .order-steps { grid-template-columns: 1fr; }
+    .kits-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    Scride<span>Ed</span>
+    <span class="nav-tagline">Learn · Dream · Build</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/courses.html">Courses</a></li>
+    <li><a href="/kits.html" class="active">Kits</a></li>
+    <li><a href="/schools/">For Schools</a></li>
+    <li><a href="/contact.html" class="nav-cta">Contact →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a> / Educational Kits</div>
+    <h1>Build Something <em>Real.</em><br>Starting from ₹799.</h1>
+    <p>Every ScrideEd kit is curated for students aged 13–18 — the same components used in our workshops, packaged with everything you need to start building at home. No soldering required.</p>
+    <div class="trust-strip">
+      <div class="trust-item">📦 <strong>Delivered across Bangalore</strong></div>
+      <div class="trust-item">🔧 <strong>Workshop-grade components</strong></div>
+      <div class="trust-item">📖 <strong>Project guide included</strong></div>
+      <div class="trust-item">💬 <strong>WhatsApp support from Asif</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-tabs">
+      <button class="ftab active" onclick="filterKits('all', this)">All Kits</button>
+      <button class="ftab" onclick="filterKits('instock', this)">In Stock</button>
+      <button class="ftab" onclick="filterKits('arduino', this)">Arduino</button>
+      <button class="ftab" onclick="filterKits('robotics', this)">Robotics</button>
+      <button class="ftab" onclick="filterKits('electronics', this)">Electronics</button>
+    </div>
+    <div class="result-count" id="result-count">4 kits</div>
+  </div>
+</div>
+
+<!-- KITS GRID -->
+<section class="kits-section">
+  <div class="kits-inner">
+    <div class="kits-grid" id="kits-grid">
+
+      <!-- KIT 1: Beginner Arduino Kit -->
+      <div class="kit-card in-stock" data-category="arduino" data-stock="instock">
+        <span class="kit-badge badge-popular">⭐ Best Seller</span>
+        <div class="kit-img">
+          <!--
+            ADD IMAGE:
+            <img src="../assets/images/kit-arduino-beginner.webp" alt="Beginner Arduino Kit" loading="lazy" />
+            Until then, placeholder shows:
+          -->
+          <div class="kit-img-placeholder">
+            ⚡
+            <span>Add kit image</span>
+          </div>
+        </div>
+        <div class="kit-body">
+          <div class="kit-category">Arduino · Beginner</div>
+          <div class="kit-name">Beginner Arduino Kit</div>
+          <p class="kit-desc">Perfect starter kit with Arduino UNO board and essential components for 15+ projects. No experience needed — everything labelled and ready to use.</p>
+          <div class="kit-includes">
+            <span class="kit-tag">Arduino UNO</span>
+            <span class="kit-tag">Breadboard</span>
+            <span class="kit-tag">LEDs</span>
+            <span class="kit-tag">Sensors</span>
+            <span class="kit-tag">Resistors</span>
+            <span class="kit-tag">Jumper wires</span>
+          </div>
+          <div class="kit-projects"><strong>15+</strong> beginner projects included</div>
+        </div>
+        <div class="kit-footer">
+          <div class="kit-price">
+            ₹999
+            <span class="price-note">incl. project guide</span>
+          </div>
+          <a href="https://wa.me/918660552494?text=Hi!%20I%27d%20like%20to%20order%20the%20Beginner%20Arduino%20Kit%20(₹999).%20Please%20share%20payment%20details."
+             class="btn-order">Order Now →</a>
+        </div>
+      </div>
+
+      <!-- KIT 2: Robotics Explorer Kit -->
+      <div class="kit-card sold-out" data-category="robotics" data-stock="soldout">
+        <span class="kit-badge badge-soldout">Sold Out</span>
+        <div class="kit-img">
+          <div class="kit-img-placeholder">🤖<span>Add kit image</span></div>
+        </div>
+        <div class="kit-body">
+          <div class="kit-category">Robotics · Intermediate</div>
+          <div class="kit-name">Robotics Explorer Kit</div>
+          <p class="kit-desc">Build your own programmable robot with motors, sensors, and step-by-step instructions. Ideal for students who've tried Arduino and want to go further.</p>
+          <div class="kit-includes">
+            <span class="kit-tag">Chassis frame</span>
+            <span class="kit-tag">DC motors</span>
+            <span class="kit-tag">Motor driver</span>
+            <span class="kit-tag">IR sensors</span>
+            <span class="kit-tag">Arduino</span>
+            <span class="kit-tag">Wheels</span>
+          </div>
+          <div class="kit-projects"><strong>8+</strong> robot build projects included</div>
+        </div>
+        <div class="kit-footer">
+          <div class="kit-price">
+            ₹1,499
+            <span class="price-note">next batch soon</span>
+          </div>
+          <a href="https://wa.me/918660552494?text=Hi!%20I%27d%20like%20to%20be%20notified%20when%20the%20Robotics%20Explorer%20Kit%20is%20back%20in%20stock."
+             class="btn-notify">Notify Me</a>
+        </div>
+      </div>
+
+      <!-- KIT 3: Electronics Lab Kit -->
+      <div class="kit-card sold-out" data-category="electronics" data-stock="soldout">
+        <span class="kit-badge badge-soldout">Sold Out</span>
+        <div class="kit-img">
+          <div class="kit-img-placeholder">🔌<span>Add kit image</span></div>
+        </div>
+        <div class="kit-body">
+          <div class="kit-category">Electronics · Beginner</div>
+          <div class="kit-name">Electronics Lab Kit</div>
+          <p class="kit-desc">Complete set of electronic components with breadboard, jumper wires, and a project guide. Perfect for exploring circuits before jumping to microcontrollers.</p>
+          <div class="kit-includes">
+            <span class="kit-tag">Breadboard</span>
+            <span class="kit-tag">Resistors kit</span>
+            <span class="kit-tag">Capacitors</span>
+            <span class="kit-tag">LEDs</span>
+            <span class="kit-tag">Transistors</span>
+            <span class="kit-tag">Multimeter</span>
+          </div>
+          <div class="kit-projects"><strong>20+</strong> circuit projects included</div>
+        </div>
+        <div class="kit-footer">
+          <div class="kit-price">
+            ₹799
+            <span class="price-note">next batch soon</span>
+          </div>
+          <a href="https://wa.me/918660552494?text=Hi!%20I%27d%20like%20to%20be%20notified%20when%20the%20Electronics%20Lab%20Kit%20is%20back%20in%20stock."
+             class="btn-notify">Notify Me</a>
+        </div>
+      </div>
+
+      <!-- KIT 4: Raspberry Pi Starter Kit -->
+      <div class="kit-card sold-out" data-category="electronics" data-stock="soldout">
+        <span class="kit-badge badge-soldout">Sold Out</span>
+        <div class="kit-img">
+          <div class="kit-img-placeholder">🖥️<span>Add kit image</span></div>
+        </div>
+        <div class="kit-body">
+          <div class="kit-category">Raspberry Pi · Advanced</div>
+          <div class="kit-name">Raspberry Pi Starter Kit</div>
+          <p class="kit-desc">Everything you need to get started with Raspberry Pi — including case, power supply, SD card, and a beginner project guide for Python and Linux.</p>
+          <div class="kit-includes">
+            <span class="kit-tag">Raspberry Pi</span>
+            <span class="kit-tag">Case</span>
+            <span class="kit-tag">Power supply</span>
+            <span class="kit-tag">32GB SD card</span>
+            <span class="kit-tag">HDMI cable</span>
+            <span class="kit-tag">Project guide</span>
+          </div>
+          <div class="kit-projects"><strong>10+</strong> Python & Linux projects</div>
+        </div>
+        <div class="kit-footer">
+          <div class="kit-price">
+            ₹2,499
+            <span class="price-note">next batch soon</span>
+          </div>
+          <a href="https://wa.me/918660552494?text=Hi!%20I%27d%20like%20to%20be%20notified%20when%20the%20Raspberry%20Pi%20Starter%20Kit%20is%20back%20in%20stock."
+             class="btn-notify">Notify Me</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="order-section">
+  <div class="order-inner">
+    <div class="eyebrow" style="font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">How to Order</div>
+    <h2>Order in Under 2 Minutes.</h2>
+    <p>No checkout cart. No account needed. Just WhatsApp us and we'll sort the rest.</p>
+    <div class="order-steps">
+      <div class="order-step">
+        <div class="step-num">01</div>
+        <h4>Pick your kit</h4>
+        <p>Click "Order Now" on any in-stock kit — it opens a WhatsApp message with your kit pre-filled.</p>
+      </div>
+      <div class="order-step">
+        <div class="step-num">02</div>
+        <h4>Send the message</h4>
+        <p>Hit send on WhatsApp. We'll confirm availability and share payment details within a few hours.</p>
+      </div>
+      <div class="order-step">
+        <div class="step-num">03</div>
+        <h4>Pay via UPI</h4>
+        <p>Transfer via UPI or bank transfer to Scride Smart Solutions Pvt Ltd. Send us the screenshot.</p>
+      </div>
+      <div class="order-step">
+        <div class="step-num">04</div>
+        <h4>Kit delivered</h4>
+        <p>We dispatch within 1–2 working days across Bangalore. Tracking details sent on WhatsApp.</p>
+      </div>
+    </div>
+    <div class="order-ctas">
+      <a href="https://wa.me/918660552494?text=Hi!%20I%27d%20like%20to%20order%20a%20ScrideEd%20kit.%20Can%20you%20share%20what%27s%20currently%20in%20stock?" class="btn-wa">
+        💬 WhatsApp to Order
+      </a>
+      <a href="mailto:hello@scrideed.com?subject=Kit Order Enquiry" class="btn-email">
+        ✉️ Email Us Instead
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLES -->
+<section class="bundle-section">
+  <div class="bundle-inner">
+    <div style="font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Save More</div>
+    <h2>Workshop + Kit Bundles</h2>
+    <p>Register for a workshop and get the kit included — better value, and you get to use it hands-on in the session first.</p>
+    <div class="bundle-grid">
+      <div class="bundle-card featured">
+        <div class="bundle-label">Most Popular Bundle</div>
+        <h3>Arduino Bootcamp + Kit</h3>
+        <p>Attend the 2-day Arduino Bootcamp and get the Beginner Arduino Kit included. Build in the workshop, take the kit home.</p>
+        <div class="bundle-kits">
+          <div class="bundle-kit-row">2-day Arduino Bootcamp (July 2026)</div>
+          <div class="bundle-kit-row">Beginner Arduino Kit (₹999 value)</div>
+          <div class="bundle-kit-row">Certificate of completion</div>
+        </div>
+        <div class="bundle-price-row">
+          <span class="bundle-price">Workshop fee</span>
+          <span class="bundle-save">Kit included free</span>
+        </div>
+        <a href="/register.html" class="btn-order" style="align-self:flex-start;margin-top:0.5rem;">Register for Workshop →</a>
+      </div>
+      <div class="bundle-card">
+        <div class="bundle-label">Coming Soon</div>
+        <h3>Robotics Bootcamp + Kit</h3>
+        <p>The Robotics Bootcamp includes the Robotics Explorer Kit. Build your robot during the workshop, it's yours to keep.</p>
+        <div class="bundle-kits">
+          <div class="bundle-kit-row">2-day Robotics Bootcamp (August 2026)</div>
+          <div class="bundle-kit-row">Robotics Explorer Kit (₹1,499 value)</div>
+          <div class="bundle-kit-row">Certificate of completion</div>
+        </div>
+        <div class="bundle-price-row">
+          <span class="bundle-price">Workshop fee</span>
+          <span class="bundle-save">Kit included free</span>
+        </div>
+        <a href="https://wa.me/918660552494?text=Hi!%20I%27m%20interested%20in%20the%20Robotics%20Bootcamp%20+%20Kit%20bundle." class="btn-notify" style="align-self:flex-start;margin-top:0.5rem;">Notify Me →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <h2>Kit FAQs</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Do I need any experience to use these kits? <span class="faq-icon">+</span></div>
+        <div class="faq-a">The Beginner Arduino Kit and Electronics Lab Kit are designed for complete beginners. The Robotics Explorer Kit assumes basic familiarity with Arduino. The Raspberry Pi Kit suits students who already know some Python or Linux basics.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's included in "project guide"? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Every kit includes a printed or digital step-by-step project guide written by Asif — covering setup, component explanation, and multiple project walkthroughs. You also get WhatsApp access to ask questions directly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you deliver outside Bangalore? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Currently we focus on Bangalore delivery. If you're outside Bangalore, WhatsApp us and we'll check if we can arrange shipping to your location.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does delivery take? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We dispatch within 1–2 working days of payment confirmation. Delivery within Bangalore typically takes 1–3 days. We'll send you tracking details on WhatsApp.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if a component in the kit is missing or damaged? <span class="faq-icon">+</span></div>
+        <div class="faq-a">WhatsApp us immediately with a photo and we'll replace the component at no charge. We check every kit before dispatch but occasionally components get damaged in transit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is it cheaper to buy the kit separately or with a workshop? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Workshop registrations include the kit at no extra cost — making the bundle significantly better value. If you only want the kit without the workshop, you can order it separately at the listed price.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Scride Smart Solutions Private Limited · ScrideEd · Frazer Town, Bangalore</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/refund-policy/">Refunds</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918660552494" class="whatsapp-float">💬</a>
+
+<script>
+  /* Filter kits */
+  function filterKits(cat, el) {
+    document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    const cards = document.querySelectorAll('.kit-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const catMatch  = cat === 'all' || card.dataset.category === cat;
+      const stockMatch = cat === 'instock' ? card.dataset.stock === 'instock' : true;
+      const show = catMatch && stockMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('result-count').textContent = visible + (visible === 1 ? ' kit' : ' kits');
+  }
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
